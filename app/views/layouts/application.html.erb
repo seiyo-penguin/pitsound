@@ -1,37 +1,35 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <title>Pitchsound</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <header class="header">
-  <div class="header__bar row">
-    <h1 class="grid-6"><a href="/">PicTweet</a></h1>
-      <% if user_signed_in? %>
-        <div class="user_nav grid-6">
-          <span><%= current_user.nickname %>
-            <ul class="user__info">
-              <li>
-                <a href="/users/current_user">マイページ</a>
-                <%= link_to "ログアウト", destroy_user_session_path %>
-              </li>
-            </ul>
-          </span>
-          <a class="post" href="/tweets/new">投稿する</a>
-        </div>
-      <% else %>
-        <div class="grid-6">
-          <%= link_to "ログイン", new_user_session_path, :class => 'post' %>
-          <%= link_to "新規登録", new_user_registration_path, :class => 'post' %>
-        </div>
-      <% end %>
-  </div>
-</header>
+  <head>
+    <meta charset="UTF-8" />
+<!--     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=0.6667, user-scalable=0;"> 
+    <link rel="stylesheet" href="style.css"> -->
+    <title>Pitchsound</title>
+     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+       <div class="heading clearfix">
+        <h1><%= link_to 'Pitchsound', "/", method: :get , class: "title" %></h1>
+          <% if user_signed_in? %>
+                <div class="entry_button">
+                  <%= link_to 'Sign Out', "/users/sign_out", method: :delete %>
+                </div>
+                          <% end %>
+                <form method="get" action="#" class="search">
+                  <div>
+                    <input type="text" name="example" class="textBox"><input type="submit" value="検索" class="btn">
+                  </div>
+                </form>
+
+      </div>
+    </header>
+
+
+  </body>
 
 <%= yield %>
 
 </body>
-</html>
+  </html>

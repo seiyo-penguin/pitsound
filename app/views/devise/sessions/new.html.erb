@@ -1,0 +1,114 @@
+<html>
+<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=0.6667, user-scalable=0;">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Pitchsound ログイン</title>
+  </head>
+<!--     <header>
+       <div class="heading clearfix">
+       <h1 class="title">Pitchsound</h1>
+          <form method="get" action="#" class="search">
+
+          <div>
+          <input type="text" name="example" class="textBox"><input type="submit" value="検索" class="btn">
+          </div>
+
+          </form>
+      </div>
+    </header> -->
+<div class="container_demo">
+  <a class="hiddenanchor" class="toregister"></a>
+  <a class="hiddenanchor" class="tologin"></a>
+  <div class="wrapper">
+    <div class="login" class="animate form">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <h1>Log in</h1>
+    <div>
+    <%= f.email_field :email, autofocus: true, :placeholder => 'Your email' %>
+  </div>
+  <div>
+            <%= f.password_field :password, autocomplete: "off", :placeholder => 'Your Password' %>
+          </div>
+          <div class="row">
+            <% if devise_mapping.rememberable? -%>
+              <div class="col-xs-6"><%= f.check_box :remember_me %> <%= f.label :パスワードを記憶 %></div>
+              <% end %>
+
+          <div class="col-xs-6">パスワードを忘れましたか？</div>
+            <div class="submit"><%= f.submit "login" %></div>
+          </div>
+        <% end %>
+        <div class="more_link_box">
+        <strong>まだアカウントを持っていませんか？</strong>
+        <%= link_to 'sign up', "/users/sign_up", method: :get , class: "signup"%>
+      </div>
+<!--       <form>
+        <h1>Log in</h1>
+        <p>
+          <label for="username" class="uname"> Your email or username </label>
+          <input class="username" name="username" required="required" type="text" placeholder="username or email"/>
+        </p>
+        <p> 
+          <label for="password" class="youpasswd" data-icon="p"> Your password </label>
+          <input class="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" />
+        </p>
+        <p class="keeplogin"> 
+          <input type="checkbox" name="loginkeeping" class="loginkeeping" value="loginkeeping" /> 
+          <label for="loginkeeping">Keep me logged in</label>
+        </p>
+        <p class="login button"> 
+          <input type="submit" value="Login" /> 
+        </p>
+        <p class="change_link">
+          Not a member yet ?
+          <a href="#toregister" class="to_register">Join us</a>
+        </p>
+      </form>
+    </div>
+
+    <div class="register" class="animate form">
+      <form  action="mysuperscript.php" autocomplete="on"> 
+        <h1> Sign up </h1> 
+        <p> 
+          <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
+          <input class="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
+        </p>
+        <p> 
+          <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
+          <input class="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/> 
+        </p>
+        <p> 
+          <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
+          <input class="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
+        </p>
+        <p> 
+          <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
+          <input class="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
+        </p>
+        <p class="signin button"> 
+          <input type="submit" value="Sign up"/> 
+        </p>
+        <p class="change_link">  
+          Already a member ?
+          <a href="#tologin" class="to_register"> Go and log in </a>
+        </p>
+      </form> -->
+    </div>
+  </div>
+</div>
+  <footer>
+
+
+
+    <div class="tab_contents clearfix">
+            <div class="tab1-2" name="tab1"><a href="#tab1" class="tabmenu">Search</a></div>
+            <div class="tab2-2" name="tab2"><a href="#tab2" class="tabmenu">Mypage</a></div>
+            <%= link_to 'Mypage', "/users/sign_out", method: :delete , class: "tabmenu"%>
+    </div>
+
+</footer>
+
+  </body>
+</html>

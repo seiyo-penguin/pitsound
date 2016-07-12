@@ -1,0 +1,85 @@
+<html>
+<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=0.6667, user-scalable=0;"> 
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Pitchsound ログイン</title>
+  </head>
+
+<div class="container_demo">
+  <a class="hiddenanchor" class="toregister"></a>
+  <a class="hiddenanchor" class="tologin"></a>
+  <div class="wrapper">
+
+
+    <div class="register" class="animate form">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+            <form  action="sign_up" autocomplete="on"> 
+        <h1> Sign up </h1> 
+        <p> 
+        <div class="uname"><%= f.label :username %><br />
+        <%= f.text_field :username, placeholder: 'Your username' %></div>
+          <!-- <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
+          <input class="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" /> -->
+        </p>
+        <p>
+        <div class="youmail"><%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, placeholder: 'Your email' %></div>
+
+            <div class="youpasswd"><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
+            <%= f.password_field :password, autocomplete: "off", placeholder: 'Your password' %></div>
+<!--           <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
+          <input class="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/>  -->
+        </p>
+<!--         <p> 
+          <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
+          <input class="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
+        </p> -->
+        <p> 
+        <div class="youpasswd"><%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: 'Please confirm your password' %></div>
+<!--           <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
+          <input class="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/> -->
+        </p>
+        <div class="field">
+          <%= f.file_field :avatar %>
+          </div>
+          <div class="signin">
+              <div class="actions">
+                  <%= f.submit %>
+              </div>
+            </div>
+<!--         <p class="signin"> 
+          <input type="submit" value="Sign up"/> 
+        </p> -->
+        <p class="change_link">
+          Already a member ?
+          <%= link_to 'Login', "/users/sign_in", method: :get %>
+
+        </p>
+<!--       </form> -->
+<% end %>
+    </div>
+  </div>
+</div>
+
+
+
+<!--   <footer>
+
+
+
+    <div class="tab_contents clearfix">
+            <div class="tab1-2" name="tab1"><a href="#tab1" class="tabmenu">Search</a></div>
+            <div class="tab2-2" name="tab2">
+<!--               <a href="#tab2" class="tabmenu">Mypage</a> -->
+<!--               <%= link_to 'Mypage', "/users/sign_out", method: :get %>
+            </div>
+    </div>
+
+</footer> --> 
+
+  </body>
+</html>
