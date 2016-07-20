@@ -38,23 +38,26 @@ header {
 }
 
 form#search div {
-width: 200px; /* ボックスの幅 */
-padding: 1px 0; /* ボックスのパディング（上下、左右） */
+width: 300px; /* ボックスの幅 */
+padding: 0 0; /* ボックスのパディング（上下、左右） */
 background-color: #ffffff; /* ボックスの背景色 */
 border: 1px #808080 solid; /* ボックスの境界線 */
 position: absolute;
-right: 10;
-top: 20;
+margin: 0 auto;
+top: 60;
 }
 
 /* --- テキストボックス --- */
 form#search input.textBox {
 width: 150px; /* テキストボックスの幅 */
-margin: 0 4px 0 5px; /* テキストボックスのマージン（上右下左） */
+height: 50px;
+margin: 0 auto 0 auto; /* テキストボックスのマージン（上右下左） */
 padding: 0;
 background-color: #ffffff; /* テキストボックスの背景色 */
 border: none; /* テキストボックスの境界線（なし） */
 color: #000000;
+font-size: 20px;
+margin: 0 auto;
 
 }
 
@@ -68,6 +71,7 @@ font-weight: bold;
 color: #ffffff;
 letter-spacing: 0.3em;
 position: absolute;
+
 }
 
 .top-content ul{
@@ -212,9 +216,16 @@ ul {
 }
 
 .button {
+  top: 10px;
+  right: 50px;
+  width: 80px;
+  height: 20px;
+}
+
+button.btn {
   top: 15px;
-  right: 15px;
-  width: 70px;
+  width: 50px;
+  height: 20px;
 }
 
 .uploadcontents {
@@ -306,7 +317,7 @@ height: 100%;
     display: block;
     content: "";
     position: absolute;
-    top: 450px;
+    top: 600px;
     left: 32.75px;
     width: 95%;
     height: 50px;
@@ -501,7 +512,11 @@ left: 250px;
 
 .btn {
   width: 30px;
-  font-size: 12px;
+  font-size: 20px;
   padding-left: 0;
   padding-right: 0;
+}
+
+.insert_youtube {
+  text-align: center;
 }

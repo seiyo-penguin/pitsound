@@ -8,9 +8,9 @@
   </head>
   <body>
     <% if user_signed_in? %>
-                <li class="entry_button" style="right: 30%">
+                <div class="entry_button" style="right: 30%">
                   <%= link_to 'Sign Out', "/users/sign_out", method: :delete %>
-                </li>
+                </div>
 
               <% end %>
 
@@ -58,8 +58,18 @@
 
 
     <div class="tab_contents clearfix">
-            <div class="tab1-2" name="tab1"><a href="#tab1" class="tabmenu">Search</a></div>
-            <div class="tab2-2" name="tab2"><a href="#tab2" class="tabmenu">Mypage</a></div>
+            <div class="tab1-2" name="tab1">            <%= link_to 'Search', "/music", method: :get , class: "tabmenu"%>
+            </div>
+            <div class="tab2-2" name="tab2">
+            <% if user_signed_in? %>
+              <%= link_to 'Mypage', "/users/:id", method: :get , class: "tabmenu"%>
+            <% else %>
+            <%= link_to 'Login', "/users/sign_in", method: :get , class: "tabmenu"%>
+          <% end %>
+              <!-- <a href="#tab2" class="tabmenu">Mypage</a> -->
+              <!-- <%= link_to 'ログイン', "/users/sign_in", method: :get , class: "tabmenu"%> -->
+              <!-- <%= link_to 'ログアウト', "/users/sign_out", method: :delete , class: "tabmenu"%> -->
+            </div>
     </div>
 
 </footer>

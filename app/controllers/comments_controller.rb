@@ -1,4 +1,4 @@
 class CommentsController < ApplicationController
-  def comments
+  def 
     end
 end
