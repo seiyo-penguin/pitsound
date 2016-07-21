@@ -2,16 +2,20 @@ class MusicController < ApplicationController
     skip_before_filter :verify_authenticity_token
 
   def index
+    @nusics = Music.all
 
   end
 
   def create
-     # json_request = JSON.parse(request.body.read)
-     # binding.pry
+
 
     Music.create(music_params)
-    # @music = Music.find(music_params[:uid])
+         # binding.pry
+
   end
+
+  def new
+    end
 
   private
   def music_params

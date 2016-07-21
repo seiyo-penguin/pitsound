@@ -8,5 +8,5 @@ Rails.application.routes.draw do
     resources :comments do
     end
   end
-
+  get   'music/new'  =>  'music#new'
 end

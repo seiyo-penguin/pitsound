@@ -1,11 +1,7 @@
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=0.6667, user-scalable=0;"> 
-    <link rel="stylesheet" href="style.css">
+
     <title>Pitchsound マイページ</title>
     <h2 class="mypage">My Page</h2>
-  </head>
+
   <body>
     <% if user_signed_in? %>
                 <div class="entry_button" style="right: 30%">
@@ -18,7 +14,7 @@
     <div class="userprofile">
       <div class="user">
         <h2><%=  current_user.username %> <span>さんのマイページ</span></h2></div>
-      <div class="picture"><%= image_tag  current_user.avatar, :width => "100%", :height => "460px" %></div>
+      <div class="picture"><%= image_tag  current_user.avatar, :width => "100%", :height => "750px" %></div>
       </div>
     </div>
 

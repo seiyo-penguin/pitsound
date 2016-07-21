@@ -1,0 +1,45 @@
+
+    <title>Pitchsound 投稿フォーム</title>
+
+<div class="uploadcontents">
+<%= form_tag('/music', method: :post) do %>
+    <h3>
+      投稿する
+    </h3>
+    <input placeholder="title" type="text" name="title">
+    <input placeholder="File" type="file" name="File">
+    <textarea cols="30" name="text" placeholder="text" rows="10"></textarea>
+    <input type="submit" value="SENT">
+  <% end %>
+
+    <div class="upload">
+
+    <input type="file" class="upload_form">
+  </div>
+
+    <%= image_tag 'uploadphoto.png', :width => "10%" %>
+
+</div>
+   </div>
+ <div class="contents row">
+    <div class="success">
+      <a class="btn" href="/tweets">投稿一覧へ戻る</a>
+    </div>
+  </div>
+
+<footer>
+    <div class="tab_contents clearfix">
+            <div class="tab1-2" name="tab1"> <%= link_to 'Search', "/music", method: :get , class: "tabmenu"%>
+            </div>
+
+            <div class="tab2-2" name="tab2">
+            <%= link_to 'Login', "/users/sign_in", method: :get , class: "tabmenu"%>
+            </div>
+    </div>
+
+</footer>
+
+  </body>
+</html>
+
+

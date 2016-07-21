@@ -1,19 +1,20 @@
   <% if user_signed_in? %>
-                <li class="entry_button" style="right: 30%">
+                <div class="entry_button" style="right: 30%">
                   <%= link_to 'Sign Out', "/users/sign_out", method: :delete %>
-                </li>
+                </div>
 
               <% end %>
-
-<form method="get" action="#" id="search">
   <div>
+<form method="get" action="#" id="search">
+
   <form id="search" onsubmit="return false;">
     <input type="text" class="textbox" placeholder="曲名で検索" id="q" size="40">
-    <button type="submit" value="検索" class="btn"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+    <button type="submit" value="検索" class="btn"><span aria-hidden="true"></span></button>
     </form>
 
-  </div>
+
 </form>
+  </div>
 
 <ul id="list"></ul>
  <div id="search">
@@ -36,7 +37,7 @@
 
   <div class="right-content">
 
-    <li><%= image_tag 'playbutton.png', :width => "70%" %></li>
+    <li><%= image_tag 'playbutton.png', :width => "50%" %></li>
   </div>
 
 <div class="left-content">
@@ -44,7 +45,7 @@
   </div>
 
   <div class="right-content">
-    <li><%= image_tag 'playbutton.png', :width => "70%" %></li>
+    <li><%= image_tag 'playbutton.png', :width => "50%" %></li>
       </div>
 
 
@@ -54,7 +55,7 @@
   </div>
 
   <div class="right-content">
-    <li><%= image_tag 'playbutton.png', :width => "70%" %></li>
+    <li><%= image_tag 'playbutton.png', :width => "50%" %></li>
   </div>
 
 </ul>
@@ -73,9 +74,7 @@
             <% else %>
             <%= link_to 'Login', "/users/sign_in", method: :get , class: "tabmenu"%>
           <% end %>
-              <!-- <a href="#tab2" class="tabmenu">Mypage</a> -->
-              <!-- <%= link_to 'ログイン', "/users/sign_in", method: :get , class: "tabmenu"%> -->
-              <!-- <%= link_to 'ログアウト', "/users/sign_out", method: :delete , class: "tabmenu"%> -->
+
             </div>
     </div>
 
