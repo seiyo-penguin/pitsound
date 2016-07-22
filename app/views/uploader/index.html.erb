@@ -31,35 +31,32 @@
     <%= link_to '新規投稿', "/uploader/form", method: :get , class: "upload-yours clearfix", id: "post_a"%>
 
 
+      <% UploadFile.all.reverse_order.each do |upload_file| %>
 <ul class="list-menu">
-  <div class="left-content">
-    <li><a href="#"><p class="username">Username</p></a><a href="#">投稿１</a></li>
-  </div>
 
+
+  </div>
   <div class="right-content">
+    <li>
+    <a href="#">
+    <p class="username"><%= upload_file.user_id %></p>
+    </a>
+    <a href="#">
+    <%= upload_file.title %>
+    </a>
 
-    <li><%= image_tag 'playbutton.png', :width => "50%" %></li>
+
+    </li>
+
+
+    <ul>
+    <audio controls src= <%= upload_file.file %>>
+    </audio>
+
+    </ul>
   </div>
+<% end %>
 
-<div class="left-content">
-    <li><a href="#"><p class="username">Username</p></a><a href="#">投稿2</a></li>
-  </div>
-
-  <div class="right-content">
-    <li><%= image_tag 'playbutton.png', :width => "50%" %></li>
-      </div>
-
-
-
-<div class="left-content">
-    <li><a href="#"><p class="username">Username</p></a><a href="#">投稿3</a></li>
-  </div>
-
-  <div class="right-content">
-    <li><%= image_tag 'playbutton.png', :width => "50%" %></li>
-  </div>
-
-</ul>
 
 
 

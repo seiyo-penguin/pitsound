@@ -2,7 +2,7 @@ class MusicController < ApplicationController
     skip_before_filter :verify_authenticity_token
 
   def index
-    @nusics = Music.all
+    @musics = Music.all
 
   end
 

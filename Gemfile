@@ -59,3 +59,4 @@ gem 'google-api-client', '<0.9'
 gem 'trollop', '~> 2.1'
 
   gem 'mechanize'
+  gem 'carrierwave'
