@@ -6,12 +6,16 @@
     <h3>
       投稿する
     </h3>
-    <%= form_for @upload, :url => {:action => :upload} do |f| %>
+    <%= form_for current_user, [@music, @upload], :url => {:action => :upload} do |f| %>
+      <%= f.label :songtitle, "曲名" %>
+      <%= f.text_field :songtitle %>
       <%= f.label :title, "title" %>
       <%= f.text_field :title %>
+
       <%= f.label :file %>
       <%= f.file_field :file %>
       <%= f.submit "Upload" %>
+
     <% end %>
 
 <!--

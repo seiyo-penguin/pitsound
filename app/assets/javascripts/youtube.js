@@ -29,7 +29,9 @@ $(function() {
         // GET, POST, PUT, DELETEなどを設定します。
         type: 'POST',
         dataType: "html",
-        data: {uid: id
+        data: {
+          uid: id,
+          songtitle: $('#q').val()
         },
         success: function() {
           console.log("success");

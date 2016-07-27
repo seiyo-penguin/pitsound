@@ -8,9 +8,10 @@
 <form method="get" action="#" id="search">
 
   <form id="search" onsubmit="return false;">
-    <input type="text" class="textbox" placeholder="曲名で検索" id="q" size="40">
+    <input type="text" class="textbox" placeholder="曲名で検索" id="q" size="40" name="songtitfle">
     <button type="submit" value="検索" class="btn"><span aria-hidden="true"></span></button>
-    </form>
+  </form>
+
 
 
 </form>
@@ -26,40 +27,39 @@
 
 </div>
 
+<%= link_to '新規投稿', uploader_form_path(@upload_file, songtitle: @songtitle), method: :get , class: "upload-yours clearfix", id: "post_a" %>
 
 
-    <%= link_to '新規投稿', "/uploader/form", method: :get , class: "upload-yours clearfix", id: "post_a"%>
 
-
+      <% UploadFile.all.reverse_order.each do |upload_file| %>
 <ul class="list-menu">
-  <div class="left-content">
-    <li><a href="#"><p class="username">Username</p></a><a href="#">投稿１</a></li>
-  </div>
 
+
+  </div>
   <div class="right-content">
+    <li>
+    <a href="#">
+    <p class="username">Username:<%= upload_file.user_id %></p>
 
-    <li><%= image_tag 'playbutton.png', :width => "50%" %></li>
+    </a><br>
+
+    <a href="#">Title:
+    <%= upload_file.title %>
+    <a href="/uploader/#/comments/index">コメント一覧</a>
+    </a>
+
+    <ul>
+    <audio controls src= <%= upload_file.file %>>
+    </audio>
+
+    </ul>
+    </li>
+
+
+
   </div>
+<% end %>
 
-<div class="left-content">
-    <li><a href="#"><p class="username">Username</p></a><a href="#">投稿2</a></li>
-  </div>
-
-  <div class="right-content">
-    <li><%= image_tag 'playbutton.png', :width => "50%" %></li>
-      </div>
-
-
-
-<div class="left-content">
-    <li><a href="#"><p class="username">Username</p></a><a href="#">投稿3</a></li>
-  </div>
-
-  <div class="right-content">
-    <li><%= image_tag 'playbutton.png', :width => "50%" %></li>
-  </div>
-
-</ul>
 
 
 

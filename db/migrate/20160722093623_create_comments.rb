@@ -4,7 +4,7 @@ class CreateComments < ActiveRecord::Migration
       t.integer :nickname
       t.integer :rate
       t.text :comments
-      t.integer :upload_file_id
+      t.integer :uploader_id
       t.timestamps null: false
     end
   end

@@ -26,12 +26,12 @@
 
 </div>
 
-
+  <p> 投稿されました！</p>
 
     <%= link_to '新規投稿', "/uploader/form", method: :get , class: "upload-yours clearfix", id: "post_a"%>
 
 
-      <% UploadFile.all.reverse_order.each do |upload_file| %>
+      <% UploadFile.where('songtitle LIKE(?)', "%#{params[:songtitle]}%") do |upload_file| %>
 <ul class="list-menu">
 
 
@@ -43,9 +43,9 @@
 
     </a><br>
 
-    <a href="#">Title:
-    <%= upload_file.title %>
-    </a>
+    <p>Title:
+    </p>
+    <a href="/uploader/<%= @upload_file.id %>/comments/index">コメント一覧</a>
 
     <ul>
     <audio controls src= <%= upload_file.file %>>
