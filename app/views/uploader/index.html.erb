@@ -39,21 +39,23 @@
   <div class="right-content">
     <li>
     <a href="#">
-    <p class="username"><%= upload_file.user_id %></p>
-    </a>
-    <a href="#">
+    <p class="username">Username:<%= upload_file.user_id %></p>
+
+    </a><br>
+
+    <a href="#">Title:
     <%= upload_file.title %>
     </a>
-
-
-    </li>
-
 
     <ul>
     <audio controls src= <%= upload_file.file %>>
     </audio>
 
     </ul>
+    </li>
+
+
+
   </div>
 <% end %>
 

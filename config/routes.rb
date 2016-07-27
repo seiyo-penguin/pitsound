@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     # get 'main' => 'main#index'
   resources :music do
     resources :uploader do
-      resources :comments do
+      resources :comments
     end
   end
 end
