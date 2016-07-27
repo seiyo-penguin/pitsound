@@ -526,3 +526,24 @@ audio {
   width: 100%;
   margin-bottom: 5px;
 }
+
+.new {
+  border-style: solid ;
+   border-width: 1px;
+    padding: 10px 5px 10px 20px;
+     border-color: #FFFF66;
+      color: #800000;
+       background-color: #FFFF66;
+        width: 200px;
+         border-radius: 10px;
+          box-shadow: 5px 5px 5px #AAA;
+}
+
+li .videoresult {
+  width: 80%;
+  height: 500px;
+  background: linear-gradient(#fff, #F8F8FF);
+  font-size: 20px;
+  font-family: cursive;
+  list-style: none;
+}

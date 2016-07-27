@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post 'uploader/form' => 'uploader#form'
   post 'uploader/upload'
   get 'uploader/download'
+  get 'music/uploader/search' => 'uploader#search'
+  get 'music/search' => 'music#search'
 
 
   devise_for :users
@@ -12,10 +14,11 @@ Rails.application.routes.draw do
   root 'main#index'
   resources :main
     # get 'main' => 'main#index'
-  resources :music
+  resources :music do
     resources :uploader do
       resources :comments, only: [:index, :new, :create]
     end
+  end
 
 end
   # get   'music/new'  =>  'music#new'

@@ -22,7 +22,7 @@
     <HR color="#191970">
 
 <ul class="list-comments clearfix">
-   <% @upload_file.comments.each do |comment| %>
+   <% Comments.each do |comment| %>
                 <li style="border-bottom: dotted 1px">
                   <div class="thumbnail__caption">
                     <h3 class="text-xsmall text-overflow" title="<%= comment.nickname %>">

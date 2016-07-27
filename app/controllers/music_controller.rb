@@ -17,7 +17,14 @@ class MusicController < ApplicationController
   end
 
   def new
-    end
+  end
+
+  def show
+  end
+
+  def search
+  @music = Music.where(songtitle: params[:keyword]).limit(20)
+  end
 
   private
   def music_params

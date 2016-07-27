@@ -4,51 +4,45 @@
                 </div>
 
               <% end %>
+  <div>
 <%= form_tag('/music/uploader/search', method: :get) do %>
                 <input class="search__query" name="keyword" placeholder="曲名で検索" type="text" value=""><button class="btn-search" songtitle="検索" type="submit"><i class="icon-search"></i></button></input>
               <% end %>
-<!-- <form method="get" action="#" id="search">
-
-  <form id="search" onsubmit="return false;">
-    <input type="text" class="textbox" placeholder="曲名で検索" id="q" size="40" name="songtitfle">
-    <button type="submit" value="検索" class="btn"><span aria-hidden="true"></span></button>
-  </form> -->
-
 
 
 </form>
   </div>
 
 <ul id="list"></ul>
-<!--  <div id="search">
+ <div id="search">
 
 
 <div class="insert_youtube">
 
   </div>
 
-</div> -->
-<%= form_tag('/music/search', method: :get) do %>
-                <input class="search__query" name="keyword" placeholder="投稿したい曲を検索" type="text" value=""><button class="btn-search" songtitle="検索" type="submit"><i class="icon-search"></i></button></input>
-              <% end %>
+</div>
 
-  <div class="new"><h2>☆What's new☆</h2></div>
+<%= link_to '新規投稿', uploader_form_path(@upload_file, songtitle: @songtitle), method: :get , class: "upload-yours clearfix", id: "post_a" %>
+  <h2 class="new">☆What's new☆</h2>
 
 
-      <% UploadFile.all.reverse_order.each do |upload_file| %>
+      <% @upload_file.reverse_order.each do |upload_file| %>
 <ul class="list-menu">
 
 
   </div>
   <div class="right-content">
-    <li>
+
+  <li>
+  <a href="#">
     <p class="username">Username:<%= upload_file.user_id %></p>
+
+   <br>
+
     <a href="#">Title:
-      <%= upload_file.title %></a><br>
-    <a href="#">
-<%= upload_file.songtitle %>の他のアレンジを聞く
-    </a><br>
-    <a href="/uploader/#/comments/index">コメント一覧</a>
+    <%= upload_file.title %><br>
+    <a href="music/#{music_id}/uploader/#{uploader/id}">詳細</a>
     </a>
 
     <ul>
@@ -56,7 +50,8 @@
     </audio>
 
     </ul>
-    </li>
+  </a>
+  </li>
 
 
 
@@ -70,7 +65,7 @@
 
     <div class="tab_contents clearfix">
             <div class="tab1-1" name="tab1">
-             <%= link_to 'Songs', "/music", method: :get , class: "tabmenu"%>
+             <%= link_to 'Search', "/music", method: :get , class: "tabmenu"%>
            </div>
             <div class="tab2-1" name="tab2">
             <% if user_signed_in? %>

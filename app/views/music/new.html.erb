@@ -1,0 +1,27 @@
+
+
+
+
+
+
+
+<form method="get" action="#" id="search">
+
+  <form id="search" onsubmit="return false;">
+    <input type="text" class="textbox" placeholder="曲名で検索" id="q" size="40" name="songtitle">
+    <button type="submit" value="検索" class="btn"><span aria-hidden="true"></span></button>
+  </form>
+
+
+
+<ul id="list"></ul>
+ <div id="search">
+
+
+<div class="insert_youtube">
+
+  </div>
+
+</div>
+
+<%= link_to 'この曲のアレンジを投稿する', "/music/:id", method: :get , class: "upload-yours clearfix", id: "post_a" %>

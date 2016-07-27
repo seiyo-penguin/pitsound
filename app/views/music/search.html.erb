@@ -1,0 +1,28 @@
+<% @music.reverse_order.each do |music| %>
+<ul class="list-menu">
+
+
+  </div>
+  <div class="right-content">
+    <ul>
+  <div class="videoresult">
+
+
+
+   <br>
+
+    <a href="#">曲名:
+    <%= music.songtitle %><br>
+
+    </a>
+
+<iframe width="853" height="480" src="https://www.youtube.com/embed/#{music.uid}" "allowfullscreen></iframe>
+
+  </a>
+  </div>
+    </ul>
+
+
+
+  </div>
+<% end %>

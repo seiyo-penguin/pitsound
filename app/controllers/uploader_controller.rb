@@ -10,14 +10,24 @@ class UploaderController < ApplicationController
   end
 
   def show
+    @uploader = UploadFile.find(params[:uploader_id])
   end
 
-def upload
-    # songtitle = "%#{params[:songtitle]}%"
-    @upload_file = UploadFile.new( params.require(:upload_file).permit(:title, :file, :songtitle) )
-    @upload_file.save
-    redirect_to action: 'index'
-end
+
+
+  def search
+    @upload_file = UploadFile.where(songtitle: params[:keyword]).limit(20)
+  end
+
+  def upload
+      # songtitle = "%#{params[:songtitle]}%"
+      @upload_file = current_user.upload_files.new( params.require(:upload_file).permit(:title, :file, :songtitle) )
+      # @upload_file = UploadFile.new( params.require(:upload_file).permit(:title, :file, :songtitle) )
+      @upload_file.save
+      redirect_to "/users/:id"
+  end
+
+# params.require(:upload_file).merge(user_id: current_user.id)
 
   # def download
   #   @upload_file = UploadFile.find(params[:id].to_i)

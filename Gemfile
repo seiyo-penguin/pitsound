@@ -60,3 +60,4 @@ gem 'trollop', '~> 2.1'
 
   gem 'mechanize'
   gem 'carrierwave'
+gem 'kaminari'
