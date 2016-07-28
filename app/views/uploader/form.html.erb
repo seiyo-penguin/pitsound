@@ -1,0 +1,59 @@
+
+    <title>Pitchsound 投稿フォーム</title>
+
+<div class="uploadcontents">
+<% @upload = UploadFile.new %>
+    <h3>
+      投稿する
+    </h3>
+    <%= form_for @upload, url: uploader_upload_path do |f| %>
+      <%= f.label :songtitle, "曲名" %>
+      <%= f.text_field :songtitle %>
+      <%= f.label :title, "title" %>
+      <%= f.text_field :title %>
+
+      <%= f.label :file %>
+      <%= f.file_field :file %>
+      <%= f.submit "Upload" %>
+
+    <% end %>
+
+<!--
+    <div class="upload"> -->
+<!--
+    <input type="file" class="upload_form">
+  </div> -->
+
+    <%= image_tag 'uploadphoto.png', :width => "10%" %>
+
+</div>
+<!--  <div class="contents row">
+    <div class="success">
+      <a class="btn" href="/tweets">投稿一覧へ戻る</a>
+    </div>
+  </div> -->
+
+<footer>
+
+    <div class="tab_contents clearfix">
+            <div class="tab1-2" name="tab1">
+            <%= link_to 'Songs', "/music", method: :get , class: "tabmenu"%>
+
+
+            </div>
+            <div class="tab2-1" name="tab2">
+            <% if user_signed_in? %>
+            <%= link_to 'Mypage', "/users/:id", method: :get , class: "tabmenu"%>
+            <% else %>
+            <%= link_to 'Login', "/users/sign_in", method: :get , class: "tabmenu"%>
+          <% end %>
+
+            </div>
+    </div>
+
+</footer>
+
+
+  </body>
+</html>
+

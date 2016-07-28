@@ -1,0 +1,108 @@
+
+<title>Pitchsound マイページ</title>
+<h2 class="mypage">My Page</h2>
+
+<body>
+  <% if user_signed_in? %>
+    <div class="entry_button" style="right: 30%">
+      <%= link_to 'Sign Out', "/users/sign_out", method: :delete %>
+    </div>
+  <% end %>
+
+  <div class="sawadatthi">
+    <div class="userprofile">
+      <div class="user">
+        <h2><%=  current_user.username %> <span>さんのマイページ</span></h2></div>
+      <div class="picture"><%= image_tag  current_user.avatar, :width => "100%", :height => "750px" %></div>
+    </div>
+  </div>
+
+  <ul class="mypage-list">
+  <%= link_to '新規投稿', uploader_form_path(@upload_file), method: :get , class: "upload-new" %>
+
+
+
+
+
+
+  <% User.all do |upload_file| %>
+    <ul class="list-menu">
+      <div class="right-content">
+        <li>
+          <a href="#">
+            <p class="username">Username:<%= current_user.username %></p>
+          </a><br>
+          <a href="#">Title:
+            <%= upload_file.title %>
+            <a href="/uploader/#/comments/index">コメント一覧</a>
+          </a>
+          <ul>
+            <audio controls src= <%= upload_file.file %>>
+            </audio>
+          </ul>
+        </li>
+      </div>
+    </ul>
+  <% end %>
+
+
+<!--
+      <div class="left-content">
+      <li>Title  <a href="#" class="edit">編集</a>  <a href="#" class="delete">削除</a><br><a href="#">ハナミズキピアノで弾いてみた</a></li>
+      </div>
+
+  <div class="right-content">
+  <li><input type="image" src= "playbutton.png" alt="" class="relative button"/></li>
+  </div>
+
+
+<div class="left-content">
+    <li>Title  <a href="#" class="edit">編集</a>  <a href="#" class="delete">削除</a><br><a href="#">ハナミズキピアノで弾いてみた</a></li>
+  </div>
+
+  <div class="right-content">
+  <li><input type="image" src= "playbutton.png" alt="" class="relative button"/></li>
+  </div>
+
+  <div class="left-content">
+    <li>Title  <a href="#" class="edit">編集</a>  <a href="#" class="delete">削除</a><br><a href="#">ハナミズキピアノで弾いてみた</a></li>
+  </div>
+
+  <div class="right-content">
+  <li><input type="image" src= "playbutton.png" alt="" class="relative button"/></li>
+  </div>
+
+ -->
+<!-- </ul> -->
+  <!-- </div> -->
+  <footer>
+
+
+
+    <div class="tab_contents clearfix">
+            <div class="tab1-2" name="tab1">            <%= link_to 'Search', "/music", method: :get , class: "tabmenu"%>
+            </div>
+            <div class="tab2-2" name="tab2">
+            <% if user_signed_in? %>
+              <%= link_to 'Mypage', "/users/:id", method: :get , class: "tabmenu"%>
+            <% else %>
+            <%= link_to 'Login', "/users/sign_in", method: :get , class: "tabmenu"%>
+          <% end %>
+              <!-- <a href="#tab2" class="tabmenu">Mypage</a> -->
+              <!-- <%= link_to 'ログイン', "/users/sign_in", method: :get , class: "tabmenu"%> -->
+              <!-- <%= link_to 'ログアウト', "/users/sign_out", method: :delete , class: "tabmenu"%> -->
+            </div>
+    </div>
+
+</footer>
+
+
+
+
+
+  </body>
+
+
+</html>
+
+

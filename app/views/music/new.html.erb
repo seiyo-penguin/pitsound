@@ -1,0 +1,37 @@
+
+
+
+
+
+
+<!-- 
+<form method="get" action="#" id="search">
+
+  <form id="search" onsubmit="return false;">
+    <input type="text" class="textbox" placeholder="曲名で検索" id="q" size="40" name="songtitle">
+    <button type="submit" value="検索" class="btn"><span aria-hidden="true"></span></button>
+  </form>
+
+
+
+<ul id="list"></ul>
+ <div id="search">
+
+
+<div class="insert_youtube">
+
+  </div>
+
+</div> -->
+    <h3>
+      Congratulations! You are the first to upload this song!
+      アレンジのオリジナル曲を登録してください。
+    </h3>
+    <%= form_for @music, :url => {:action => 'create'} do |f| %>
+      <%= f.label :songtitle, "曲名" %>
+      <%= f.text_field :songtitle %>
+      <%= f.label :uid, "動画のURL" %>
+      <%= f.text_field :uid %>
+      <%= f.submit "登録" %>
+
+    <% end %>

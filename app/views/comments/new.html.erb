@@ -1,0 +1,59 @@
+<title>Pitchsound 投稿フォーム</title>
+
+<div class="uploadcontents">
+    <h3>
+      投稿する
+    </h3>
+
+<%= form_for [@upload_file, @comment] do |f| %>
+          <div style="margin: 8px 0">
+            <%= f.label :nickname, style: { 'margin-right' => 8 } %>
+            <%= f.text_field :nickname, placeholder: 'nickname', value: '' %>
+          </div>
+          <div style="margin: 8px 0">
+            <%= f.label :評価, style: { 'margin-right' => 8 } %>
+            <%= f.number_field :rate, placeholder: '評価', value: 1, max: 10, min: 1, html: { class: "search__query", style: 'text-align: right;' } %>
+          </div>
+          <div style="margin: 8px 0">
+            <%= f.text_area :comments, placeholder: 'コメントを書いてね！', style: 'width: 100%;height: 300px;' %>
+          </div>
+          <div class="row">
+            <div class="col10 push1">
+              <%= button_tag type: "submit", class: "btn btn--block" do %>
+              投稿する<i class="icon-arrow-right"></i>
+              <% end %>
+            </div>
+          </div>
+          <% end %>
+
+<!--     <input placeholder="Username" type="text" name="name" autofocus><br>
+    <textarea cols="60" name="text" placeholder="text" rows="20"></textarea>
+    <div class="upload">
+ 
+    <input type="file" class="upload_form">
+  </div>
+  <input type="image" src="uploadphoto.png" value="SENT" width=10%>
+</div> -->
+ <div class="contents row">
+    <div class="success">
+      <a class="btn" href="/tweets">投稿一覧へ戻る</a>
+    </div>
+  </div>
+
+<footer>
+
+    <div class="tab_contents clearfix">
+            <div class="tab1-1" name="tab1">
+             <%= link_to 'Search', "/music", method: :get , class: "tabmenu"%>
+           </div>
+            <div class="tab2-1" name="tab2">
+            <% if user_signed_in? %>
+              <%= link_to 'Mypage', "/users/:id", method: :get , class: "tabmenu"%>
+            <% else %>
+            <%= link_to 'Login', "/users/sign_in", method: :get , class: "tabmenu"%>
+          <% end %>
+
+            </div>
+    </div>
+
+</footer>

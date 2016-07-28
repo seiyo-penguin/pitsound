@@ -1,0 +1,56 @@
+
+
+  <div>曲名：<%= @music.songtitle %></div>
+
+<iframe width="560" height="315" src= <%= @music.uid %> frameborder="0" allowfullscreen></iframe>
+
+
+
+
+
+
+<% @upload_file.reverse_order.each do |upload_file| %>
+<ul class="list-menu">
+
+
+  </div>
+  <div class="right-content">
+    <li>
+    <p class="username">Username:<%= upload_file.user_id %></p>
+    <a href="#">Title:
+      <%= upload_file.title %></a><br>
+    <a href="#">
+    <%= link_to 'コメント一覧', music_uploader_comments_path(@music, upload_file.id), method: :get , class: "upload-yours clearfix", id: "post_a"%>
+    </a>
+
+    <ul>
+    <audio controls src= <%= upload_file.file %>>
+    </audio>
+
+    </ul>
+    </li>
+
+
+
+  </div>
+<% end %>
+
+<footer>
+<div class="uploadcontents">
+<% @upload = UploadFile.new %>
+    <h3>
+      投稿する
+    </h3>
+    <%= form_for @upload, url: uploader_upload_path do |f| %>
+      <%= f.hidden_field :songtitle, :value => @music.songtitle %>
+      <%= f.hidden_field :music_id, :value => @music.id %>
+      <%= f.label :title, "title" %>
+      <%= f.text_field :title %>
+
+      <%= f.label :file %>
+      <%= f.file_field :file %>
+      <%= f.submit "Upload" %>
+
+    <% end %>
+
+  </footer>

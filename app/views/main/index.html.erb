@@ -1,0 +1,57 @@
+
+    <div class="top-content">
+      <ul>
+      <div style="position: relative;">
+          <div style="list-style: none;">
+          <%= image_tag 'top_1.jpeg', :width => "100%" %>
+
+          </div>
+        <h3 class="pr-sentence1">Pitchsoundは、音楽好きのための音源投稿プラットフォーム</h3>
+      </div>
+      </ul>
+    </div>
+    <div class="middle-content">
+       <ul>
+       <div style="position: relative;">
+          <div style="list-style: none;">
+            <%= image_tag 'IMG_4145.jpg', :width => "100%" %>
+          </div>
+       <h3 class="pr-sentence2">好きな曲をピアノでカバーしてみたり、友達とカラオケで歌ってみたり...そんな思い出は誰かと共有したいもの</h3>
+      </div>
+      </ul>
+    </div>
+
+    <div class="bottom-content">
+       <ul>
+       <div style="position: relative;">
+          <div style="list-style: none;">
+            <%= image_tag 'IMG_4148.jpg', :width => "100%" %>
+          </div>
+        <h3 class="pr-sentence3">さあ、あなたのデバイスで眠っているその音楽を、Pitchsoundでシェアしてみませんか。</h3>
+        </div>
+      </ul>
+    </div>
+
+<footer>
+
+    <div class="tab_contents clearfix">
+            <div class="tab1-2" name="tab1">
+            <%= link_to 'Songs', "/music", method: :get , class: "tabmenu"%>
+
+
+            </div>
+            <div class="tab2-1" name="tab2">
+            <% if user_signed_in? %>
+              <%= link_to 'Mypage', "/users/:id", method: :get , class: "tabmenu"%>
+            <% else %>
+            <%= link_to 'Login', "/users/sign_in", method: :get , class: "tabmenu"%>
+          <% end %>
+              <!-- <a href="#tab2" class="tabmenu">Mypage</a> -->
+              <!-- <%= link_to 'ログイン', "/users/sign_in", method: :get , class: "tabmenu"%> -->
+              <!-- <%= link_to 'ログアウト', "/users/sign_out", method: :delete , class: "tabmenu"%> -->
+            </div>
+    </div>
+
+</footer>
+
+

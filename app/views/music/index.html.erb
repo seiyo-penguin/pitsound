@@ -1,0 +1,85 @@
+  <% if user_signed_in? %>
+                <div class="entry_button" style="right: 30%">
+                  <%= link_to 'Sign Out', "/users/sign_out", method: :delete %>
+                </div>
+
+              <% end %>
+<%= form_tag('/music/uploader/search', method: :get) do %>
+                <input class="search__query" name="keyword" placeholder="曲名で検索" type="text" value=""><button class="btn-search" songtitle="検索" type="submit"><i class="icon-search"></i></button></input>
+              <% end %>
+<!-- <form method="get" action="#" id="search">
+
+  <form id="search" onsubmit="return false;">
+    <input type="text" class="textbox" placeholder="曲名で検索" id="q" size="40" name="songtitfle">
+    <button type="submit" value="検索" class="btn"><span aria-hidden="true"></span></button>
+  </form> -->
+
+
+
+</form>
+  </div>
+
+<ul id="list"></ul>
+<!--  <div id="search">
+
+
+<div class="insert_youtube">
+
+  </div>
+
+</div> -->
+<%= form_tag('/music/search', method: :get) do %>
+                <input class="search__query" name="keyword" placeholder="投稿したい曲を検索" type="text" value=""><button class="btn-search" songtitle="検索" type="submit"><i class="icon-search"></i></button></input>
+              <% end %>
+
+  <div class="new"><h2>☆What's new☆</h2></div>
+
+
+      <% UploadFile.all.reverse_order.each do |upload_file| %>
+<ul class="list-menu">
+
+
+  </div>
+  <div class="right-content">
+    <li>
+    <p class="username">Username:<%= upload_file.user_id %></p>
+    <a href="#">Title:
+      <%= upload_file.title %></a><br>
+    <a href="#">
+    </a><br>
+    <% @music = Music.where(id: upload_file.music_id) %>
+    <%= link_to 'コメント一覧', music_uploader_comments_path(@music[0], upload_file.id), method: :get , class: "upload-yours clearfix", id: "post_a"%>
+    </a>
+
+    <ul>
+    <audio controls src= <%= upload_file.file %>>
+    </audio>
+
+    </ul>
+    </li>
+
+
+
+  </div>
+<% end %>
+
+
+
+
+<footer>
+
+    <div class="tab_contents clearfix">
+            <div class="tab1-1" name="tab1">
+             <%= link_to 'Songs', "/music", method: :get , class: "tabmenu"%>
+           </div>
+            <div class="tab2-1" name="tab2">
+            <% if user_signed_in? %>
+              <%= link_to 'Mypage', "/users/:id", method: :get , class: "tabmenu"%>
+            <% else %>
+            <%= link_to 'Login', "/users/sign_in", method: :get , class: "tabmenu"%>
+          <% end %>
+
+            </div>
+    </div>
+
+</footer>

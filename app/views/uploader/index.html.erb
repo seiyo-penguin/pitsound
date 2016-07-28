@@ -1,0 +1,81 @@
+  <% if user_signed_in? %>
+                <div class="entry_button" style="right: 30%">
+                  <%= link_to 'Sign Out', "/users/sign_out", method: :delete %>
+                </div>
+
+              <% end %>
+  <div>
+<form method="get" action="#" id="search">
+
+  <form id="search" onsubmit="return false;">
+    <input type="text" class="textbox" placeholder="曲名で検索" id="q" size="40">
+    <button type="submit" value="検索" class="btn"><span aria-hidden="true"></span></button>
+    </form>
+
+
+</form>
+  </div>
+
+<ul id="list"></ul>
+ <div id="search">
+
+
+<div class="insert_youtube">
+
+  </div>
+
+</div>
+
+  <p> 投稿されました！</p>
+
+    <%= link_to '新規投稿', "/uploader/form", method: :get , class: "upload-yours clearfix", id: "post_a"%>
+
+
+      <% UploadFile.where('songtitle LIKE(?)', "%#{params[:songtitle]}%") do |upload_file| %>
+<ul class="list-menu">
+
+
+  </div>
+  <div class="right-content">
+    <li>
+    <a href="#">
+    <p class="username">Username:<%= upload_file.user_id %></p>
+
+    </a><br>
+
+    <p>Title:
+    </p>
+    <a href="/uploader/<%= @upload_file.id %>/comments/index">コメント一覧</a>
+
+    <ul>
+    <audio controls src= <%= upload_file.file %>>
+    </audio>
+
+    </ul>
+    </li>
+
+
+
+  </div>
+<% end %>
+
+
+
+
+<footer>
+
+    <div class="tab_contents clearfix">
+            <div class="tab1-1" name="tab1">
+             <%= link_to 'Search', "/music", method: :get , class: "tabmenu"%>
+           </div>
+            <div class="tab2-1" name="tab2">
+            <% if user_signed_in? %>
+              <%= link_to 'Mypage', "/users/:id", method: :get , class: "tabmenu"%>
+            <% else %>
+            <%= link_to 'Login', "/users/sign_in", method: :get , class: "tabmenu"%>
+          <% end %>
+
+            </div>
+    </div>
+
+</footer>

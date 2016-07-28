@@ -1,14 +1,33 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <title>Pitchsound</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+<!--     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=0.6667, user-scalable=0;"> 
+    <link rel="stylesheet" href="style.css"> -->
+    <title>Pitchsound</title>
+     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+  </head>
+  <body>
+    <header>
+       <div class="heading clearfix">
+        <h1><%= link_to 'Pitchsound', "/", method: :get , class: "title" %></h1>
+          <% if user_signed_in? %>
+                <div class="entry_button">
+                  <%= link_to 'Sign Out', "/users/sign_out", method: :delete %>
+                </div>
+              <% end %>
+
+
+      </div>
+    </header>
+
+
+  </body>
 
 <%= yield %>
 
 </body>
-</html>
+  </html>
