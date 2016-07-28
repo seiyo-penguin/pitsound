@@ -18,19 +18,19 @@
   </div>
 
   <ul class="mypage-list">
-  <%= link_to '新規投稿', uploader_form_path(@upload_file), method: :get , class: "upload-new" %>
 
 
 
 
 
 
-  <% User.all do |upload_file| %>
+
+  <% @upload_file.each do |upload_file| %>
     <ul class="list-menu">
       <div class="right-content">
         <li>
           <a href="#">
-            <p class="username">Username:<%= current_user.username %></p>
+            <p class="username">曲名:<%= upload_file.songtitle %></p>
           </a><br>
           <a href="#">Title:
             <%= upload_file.title %>

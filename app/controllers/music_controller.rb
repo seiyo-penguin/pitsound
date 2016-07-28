@@ -20,7 +20,7 @@ class MusicController < ApplicationController
 
   def new
     @music = Music.new
-
+    @songtitle = params[:title]
   end
 
   def show
@@ -31,11 +31,11 @@ class MusicController < ApplicationController
   end
 
   def search
-    if Music.where(songtitle: params[:keyword]).any?
-     @music = Music.where(songtitle: params[:keyword]).limit(20)
+    if Music.where(songtitle: params[:songtitle]).any?
+     @music = Music.where(songtitle: params[:songtitle]).limit(20)
    else
      @music =Music.new
-     redirect_to new_music_path(@music)
+     redirect_to new_music_path(@music, title: params[:songtitle])
    end
 
   end

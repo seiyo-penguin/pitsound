@@ -7,12 +7,6 @@
 <%= form_tag('/music/uploader/search', method: :get) do %>
                 <input class="search__query" name="keyword" placeholder="曲名で検索" type="text" value=""><button class="btn-search" songtitle="検索" type="submit"><i class="icon-search"></i></button></input>
               <% end %>
-<!-- <form method="get" action="#" id="search">
-
-  <form id="search" onsubmit="return false;">
-    <input type="text" class="textbox" placeholder="曲名で検索" id="q" size="40" name="songtitfle">
-    <button type="submit" value="検索" class="btn"><span aria-hidden="true"></span></button>
-  </form> -->
 
 
 
@@ -29,7 +23,7 @@
 
 </div> -->
 <%= form_tag('/music/search', method: :get) do %>
-                <input class="search__query" name="keyword" placeholder="投稿したい曲を検索" type="text" value=""><button class="btn-search" songtitle="検索" type="submit"><i class="icon-search"></i></button></input>
+                <input class="search__query" name="songtitle" placeholder="投稿したい曲を検索" type="text" value=""><button class="btn-search" songtitle="検索" type="submit"><i class="icon-search"></i></button></input>
               <% end %>
 
   <div class="new"><h2>☆What's new☆</h2></div>
