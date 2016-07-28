@@ -17,14 +17,19 @@ class UploaderController < ApplicationController
 
   def search
     @upload_file = UploadFile.where(songtitle: params[:keyword]).limit(20)
+
   end
 
   def upload
+# binding.pry
+
       # songtitle = "%#{params[:songtitle]}%"
-      @upload_file = current_user.upload_files.new( params.require(:upload_file).permit(:title, :file, :songtitle) )
+      @upload_file = current_user.upload_files.new( params.require(:upload_file).permit(:title, :file, :songtitle, :music_id) )
       # @upload_file = UploadFile.new( params.require(:upload_file).permit(:title, :file, :songtitle) )
       @upload_file.save
-      redirect_to "/users/:id"
+      @music = Music.find(@upload_file.music_id)
+
+      redirect_to music_path(@music)
   end
 
 # params.require(:upload_file).merge(user_id: current_user.id)

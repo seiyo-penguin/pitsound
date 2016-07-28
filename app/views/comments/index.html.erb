@@ -10,8 +10,9 @@
 
 <div class="comments-title">
 
-  <p class="username">User1</p>
-
+  <p class="username"><%= @upload_file.title %></p>
+  <audio controls src= <%= @upload_file.file %>>
+  </audio>
   </div>
   <HR color="#191970">
 
@@ -22,7 +23,7 @@
     <HR color="#191970">
 
 <ul class="list-comments clearfix">
-   <% Comments.each do |comment| %>
+   <% @comments.each do |comment| %>
                 <li style="border-bottom: dotted 1px">
                   <div class="thumbnail__caption">
                     <h3 class="text-xsmall text-overflow" title="<%= comment.nickname %>">
@@ -72,3 +73,22 @@
 
 </html>
 
+<footer>
+<div class="uploadcontents">
+<% @comment = Comment.new %>
+    <h3>
+      コメントする
+    </h3>
+    <%= form_for @comment, url: music_uploader_comments_path, method: :post do |f| %>
+      <%= f.hidden_field :uploader_id, :value => @upload_file.id %>
+      <%= f.label :nickname, "ニックネーム" %>
+      <%= f.label :評価, style: { 'margin-right' => 8 } %>
+            <%= f.number_field :rate, placeholder: '評価', value: 1, max: 10, min: 1, html: { class: "search__query", style: 'text-align: right;' } %>
+
+      <%= f.label :comments, "コメント" %>
+      <%= f.file_field :comments %>
+      <%= f.submit "Upload" %>
+
+    <% end %>
+
+  </footer>

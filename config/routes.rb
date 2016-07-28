@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   post 'uploader/upload'
   get 'uploader/download'
   get 'music/uploader/search' => 'uploader#search'
-  get 'music/search' => 'music#search'
-
+  get 'music/search/' => 'music#search'
+  post 'music/new' => 'music#create'
 
   devise_for :users
   resources :users, only: :show

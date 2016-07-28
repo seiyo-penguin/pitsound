@@ -236,9 +236,9 @@ button.btn {
 }
 
 .uploadcontents {
-    position: absolute;
+    position: fixed;
     left: 0px;
-    top: 20%;
+    top: 80%;
     bottom: 0;
     right: 0;
     text-align: center;
@@ -546,4 +546,9 @@ li .videoresult {
   font-size: 20px;
   font-family: cursive;
   list-style: none;
+}
+
+.upload-form {
+  position: fixed;
+  bottom: 0;
 }

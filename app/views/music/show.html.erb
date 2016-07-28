@@ -1,18 +1,15 @@
 
 
+  <div>曲名：<%= @music.songtitle %></div>
 
-
-<iframe width="853" height="480" src="https://www.youtube.com/embed/#{music.uid}" "allowfullscreen></iframe>
-
-
-
+<iframe width="560" height="315" src= <%= @music.uid %> frameborder="0" allowfullscreen></iframe>
 
 
 
 
 
 
-<% UploadFile.all.reverse_order.each do |upload_file| %>
+<% @upload_file.reverse_order.each do |upload_file| %>
 <ul class="list-menu">
 
 
@@ -23,9 +20,7 @@
     <a href="#">Title:
       <%= upload_file.title %></a><br>
     <a href="#">
-<%= upload_file.songtitle %>の他のアレンジを聞く
-    </a><br>
-    <a href="/uploader/#/comments/index">コメント一覧</a>
+    <%= link_to 'コメント一覧', music_uploader_comments_path(@music, upload_file.id), method: :get , class: "upload-yours clearfix", id: "post_a"%>
     </a>
 
     <ul>
@@ -39,3 +34,23 @@
 
   </div>
 <% end %>
+
+<footer>
+<div class="uploadcontents">
+<% @upload = UploadFile.new %>
+    <h3>
+      投稿する
+    </h3>
+    <%= form_for @upload, url: uploader_upload_path do |f| %>
+      <%= f.hidden_field :songtitle, :value => @music.songtitle %>
+      <%= f.hidden_field :music_id, :value => @music.id %>
+      <%= f.label :title, "title" %>
+      <%= f.text_field :title %>
+
+      <%= f.label :file %>
+      <%= f.file_field :file %>
+      <%= f.submit "Upload" %>
+
+    <% end %>
+
+  </footer>

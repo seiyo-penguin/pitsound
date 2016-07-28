@@ -46,9 +46,9 @@
     <a href="#">Title:
       <%= upload_file.title %></a><br>
     <a href="#">
-<%= upload_file.songtitle %>の他のアレンジを聞く
     </a><br>
-    <a href="/uploader/#/comments/index">コメント一覧</a>
+    <% @music = Music.where(id: upload_file.music_id) %>
+    <%= link_to 'コメント一覧', music_uploader_comments_path(@music[0], upload_file.id), method: :get , class: "upload-yours clearfix", id: "post_a"%>
     </a>
 
     <ul>

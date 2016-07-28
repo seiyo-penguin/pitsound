@@ -1,4 +1,14 @@
+
+<% if user_signed_in? %>
+              <%= link_to 'Mypage', "/users/:id", method: :get , class: "tabmenu"%>
+            <% else %>
+            <%= link_to 'Login', "/users/sign_in", method: :get , class: "tabmenu"%>
+          <% end %>
+
+
 <% @music.reverse_order.each do |music| %>
+
+
 <ul class="list-menu">
 
 
@@ -11,17 +21,21 @@
 
    <br>
 
-    <a href="#">曲名:
+曲名:
     <%= music.songtitle %><br>
-
+    <a href="#">
     </a>
 
-<iframe width="853" height="480" src="https://www.youtube.com/embed/#{music.uid}" "allowfullscreen></iframe>
+
+<iframe width="560" height="315" src= <%= music.uid %> frameborder="0" allowfullscreen></iframe>
 
   </a>
   </div>
+
+
     </ul>
 
+    <%= link_to 'この曲で決定', music_path(music), method: :get , class: "upload-yours clearfix", id: "post_a"%>
 
 
   </div>

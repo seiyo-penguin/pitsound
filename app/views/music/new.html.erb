@@ -4,7 +4,7 @@
 
 
 
-
+<!-- 
 <form method="get" action="#" id="search">
 
   <form id="search" onsubmit="return false;">
@@ -22,6 +22,16 @@
 
   </div>
 
-</div>
+</div> -->
+    <h3>
+      Congratulations! You are the first to upload this song!
+      アレンジのオリジナル曲を登録してください。
+    </h3>
+    <%= form_for @music, :url => {:action => 'create'} do |f| %>
+      <%= f.label :songtitle, "曲名" %>
+      <%= f.text_field :songtitle %>
+      <%= f.label :uid, "動画のURL" %>
+      <%= f.text_field :uid %>
+      <%= f.submit "登録" %>
 
-<%= link_to 'この曲のアレンジを投稿する', "/music/:id", method: :get , class: "upload-yours clearfix", id: "post_a" %>
+    <% end %>

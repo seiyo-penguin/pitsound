@@ -27,7 +27,7 @@
   <h2 class="new">☆What's new☆</h2>
 
 
-      <% @upload_file.reverse_order.each do |upload_file| %>
+<% @upload_file.reverse_order.each.with_index do |upload_file, num| %>
 <ul class="list-menu">
 
 
@@ -42,7 +42,8 @@
 
     <a href="#">Title:
     <%= upload_file.title %><br>
-    <a href="music/#{music_id}/uploader/#{uploader/id}">詳細</a>
+    <% @music = Music.where(id: upload_file.music_id) %>
+    <%= link_to 'コメント一覧', music_uploader_comments_path(@music[0], upload_file.id), method: :get , class: "upload-yours clearfix", id: "post_a"%>
     </a>
 
     <ul>
