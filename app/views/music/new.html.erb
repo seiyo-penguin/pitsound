@@ -7,7 +7,7 @@
       Congratulations! You are the first to upload this song!
       アレンジのオリジナル曲を登録してください。
     </h3>
-  <form method="get" action="#" id="search">
+
 
   <form id="search" onsubmit="return false;">
     <input type="text" class="textbox" value=<%= @songtitle%> id="q" size="40" name="songtitle">
@@ -19,19 +19,14 @@
       <%= f.hidden_field :songtitle %>
       <%= f.label :uid, "動画のURL" %>
       <%= f.text_field :uid %>
-      <%= f.submit "登録" %>
+      <%= f.submit "この曲のアレンジを投稿する" %>
 
     <% end %>
 
-
-
-
-<ul id="list"></ul>
-
+<form id="youtube" onsubmit="return false;">
 
 <div class="insert_youtube">
-<div id="search">
-<input type="checkbox" name="example" value="">
 </div>
 
-</div>
+</form>
+

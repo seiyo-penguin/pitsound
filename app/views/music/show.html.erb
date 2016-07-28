@@ -2,7 +2,7 @@
 
   <div>曲名：<%= @music.songtitle %></div>
 
-<iframe width="560" height="315" src= <%= @music.uid %> frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/#{@music.uid}" frameborder="0" allowfullscreen></iframe>
 
 
 
@@ -10,6 +10,7 @@
 
 
 <% @upload_file.reverse_order.each do |upload_file| %>
+
 <ul class="list-menu">
 
 
@@ -28,6 +29,9 @@
     </audio>
 
     </ul>
+    <% if user_signed_in? && current_user.id == upload_file.user_id %>
+    <%= link_to '削除', music_uploader_path, method: :delete %>
+    <% end %>
     </li>
 
 
