@@ -1,0 +1,552 @@
+
+a:link {text-decoration:none }
+a:visited {text-decoration:none }
+
+#submit_button {
+  text-align: center;
+}
+
+.input {
+  text-align: center;
+}
+
+
+body {
+  background-color: #D7EEFF;
+  font-size: 14px;
+  color: #333;
+  margin: 0 0 60px 0;
+  padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+header {
+  background-color: #000055;
+  height: 100px;
+  padding: 0;
+}
+
+.title {
+  font-family: cursive;
+  color: #6495ED;
+  display: inline;
+  position: absolute;
+  font-size: 30px;
+}
+
+form#search div {
+width: 300px; /* ボックスの幅 */
+padding: 0 0; /* ボックスのパディング（上下、左右） */
+background-color: #ffffff; /* ボックスの背景色 */
+border: 1px #808080 solid; /* ボックスの境界線 */
+position: absolute;
+margin: 0 auto;
+top: 150;
+}
+
+/* --- テキストボックス --- */
+form#search input.textBox {
+width: 150px; /* テキストボックスの幅 */
+height: 50px;
+margin: 0 auto 0 auto; /* テキストボックスのマージン（上右下左） */
+padding: 0;
+background-color: #ffffff; /* テキストボックスの背景色 */
+border: none; /* テキストボックスの境界線（なし） */
+color: #000000;
+font-size: 20px;
+margin: 0 auto;
+
+}
+
+input.btn2 {
+width: 8em;
+height: 1.8em;
+padding: 0;
+background: #008000 url(btn02.gif);
+border: 1px #008000 inset;
+font-weight: bold;
+color: #ffffff;
+letter-spacing: 0.3em;
+position: absolute;
+
+}
+
+.top-content ul{
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: -6px;
+  padding-bottom: 0;
+  background: #FFF url('top_1.jpeg') no-repeat center top scroll;
+  font-size: 30px;
+
+
+}
+
+.middle-content ul{
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: -6px;
+  padding-bottom: 0;
+  font-size: 30px;
+}
+
+.bottom-content ul{
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: -6px;
+  padding-bottom: 0;
+  font-size: 30px;
+}
+
+.clearfix:after {
+
+  clear: both;
+  display: block;
+  content: "";
+}
+
+.pr-sentence1 {
+  position:absolute;
+  top: 100px;
+  left:45px;
+  width: 460px;
+  font-family: sans-serif;
+  color: #FFF;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #191970,
+  -1px 1px 1px #191970,
+  1px -1px 1px #191970,
+  -1px -1px 1px #191970;
+}
+
+.pr-sentence2 {
+  position:absolute;
+  top:160px;
+  left:55px;
+  width: 450px;
+  font-family: sans-serif;
+  color: #FFF;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #191970,
+  -1px 1px 1px #191970,
+  1px -1px 1px #191970,
+  -1px -1px 1px #191970;
+}
+.pr-sentence3 {
+  position:absolute;
+  top:180px;
+  left:80px;
+  width: 450px;
+  font-family: sans-serif;
+  color: #FFF;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #191970,
+  -1px 1px 1px #191970,
+  1px -1px 1px #191970,
+  -1px -1px 1px #191970;
+}
+
+.mypage {
+  font-family: cursive;
+  color: #FFC0CB;
+  display: inline;
+  position: absolute;
+  left: 150px;
+  top: 8px;
+}
+
+.user {
+  background-color: #FFF;
+  text-align: center;
+  font-family: cursive;
+  font-size: 12px;
+}
+
+.userprofile {
+  background-color: #D7EEFF;
+  height: 600px;
+}
+
+.upload-new {
+  background: radial-gradient(#ADD8E6, #6495ED);
+  color: #FFF;
+  text-align: center;
+  font-size: 30px;
+  font-family: fantasy;
+  border-style: solid ;
+  border-width: 2px;
+  padding: 10px 5px 10px 5px;
+  width: 100%;
+/*  border-color: #006699;
+  background-color: #006699;
+  border-radius: 10px;*/
+  height: 50px;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.music_title1 {
+  position:relative;
+  top: 5px;
+  left: 20px;
+  right: 40px;
+  width: 80%;
+  font-family: sans-serif;
+  color: black;
+  padding-right: 40px;
+  float: left;
+}
+
+ul {
+  padding-left: 0;
+  margin: 0;
+}
+/*
+.relative {
+    position: relative;
+    width: 550px;
+}*/
+.relative {
+    position: relative;
+    float: right;
+
+}
+
+.container_demo {
+  text-align: center;
+}
+
+.button {
+  top: 10px;
+  right: 50px;
+  width: 80px;
+  height: 20px;
+}
+
+button.btn {
+  top: 15px;
+  width: 50px;
+  height: 20px;
+  margin-left: 70px;
+  background-color: #000055;
+}
+
+.uploadcontents {
+    position: fixed;
+    left: 0px;
+    top: 80%;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    font-weight: normal;
+    strong {
+      font-weight: bold;
+      padding-right: 5px;
+      font-size: 1.2em;
+  }
+}
+
+.upload {
+  position: relative;
+  overflow: hidden;
+  height: 18px;
+  width: 24px;
+}
+
+.upload_form {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 18px;
+  filter: alpha(opacity = 0);
+  opacity: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
+
+.sign-up {
+  position: relative;
+  margin: 50px auto;
+  width: 280px;
+  padding: 33px 25px 29px;
+  background: white;
+  border-bottom: 1px solid #c4c4c4;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+
+
+.upload-yours {
+  background-color: #4169E1;
+  color: #FFF;
+  text-align: center;
+  font-size: 20px;
+  font-family: fantasy;
+  border-style: solid ;
+  border-width: 2px;
+  padding: 10px 5px 10px 5px;
+  width: 150px;
+  border-color: #006699;
+  background-color: #006699;
+  height: 45px;
+  margin-bottom: 0;
+  margin-right: 10px;
+  padding: 0;
+  float: right;
+
+}
+
+.video {
+position: relative;
+height: 0;
+padding: 30px 0 56.25%;
+overflow: hidden;
+
+}
+
+.video iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+
+
+
+li {
+  width: 100%;
+  height: 200px;
+  margin: 0;
+  background: linear-gradient(#fff, #F8F8FF);
+  font-size: 20px;
+  font-family: cursive;
+  list-style: none;
+}
+
+
+div.comments-title {
+  padding-top: 10px;
+  padding-left: 15px;
+  font-size: 16px;
+}
+
+hr {
+  width: 95%;
+  margin-top: 0px;
+}
+
+p.username {
+  padding-right: 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  width: 200px;
+
+}
+
+
+
+.comments-content {
+  padding-left: 0px;
+  padding-bottom: 0px;
+}
+
+p.details {
+  padding-top: 10px;
+  padding-bottom: 0px;
+  padding-left: 15px;
+}
+
+p.comments {
+  padding-top: 10px;
+  padding-bottom: 0px;
+  padding-left: 15px;
+  font-size: 16px;
+}
+
+.list-comments {
+  list-style: none;
+  display: block;
+  content: "";
+  position: absolute;
+  left: 13.75px;
+  width: 95%;
+  height: 50px;
+  font-family: monospace;
+}
+
+.mypage-list {
+  list-style: none;
+  display: block;
+  content: "";
+  position: absolute;
+  left: 13.75px;
+  width: 95%;
+  font-family: monospace;
+  bottom: 60px;
+}
+
+
+.image-center {
+  text-align: center;
+}
+
+.left-content {
+/*  float: left;*/
+  width: 20%;
+}
+
+.right-content {
+/*  float: right;*/
+  width: 100%;
+  text-align: center;
+}
+
+.row {
+  float: right;
+  padding-right: 10px;
+  font-size: 12px;
+}
+
+.edit {
+  font-size: 12px;
+
+}
+.delete {
+  font-size: 12px;
+}
+
+.tab_contents {
+  font-family: cursive;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-size: 60px;
+}
+
+.tab1-1 {
+  text-align: center;
+  width: 50%;
+  float: left;
+  height: 100px;
+
+
+  background: radial-gradient(#6495ED, #000055);
+}
+
+.tab2-1 {
+  text-align: center;
+  width: 50%;
+  float: right;
+  height: 100px;
+  background-color: #000055
+
+}
+
+.tab1-2{
+  text-align: center;
+  width: 50%;
+  float: left;
+  height: 100px;
+  background-color: #000055
+}
+
+.tab2-2 {
+  text-align: center;
+  width: 50%;
+  float: right;
+  height: 100px;
+  background: radial-gradient(#6495ED, #000055);
+
+}
+
+
+.tab1-2 a, .tab1-2 a:visited,.tab2-1 a, .tab2-1 a:visited{
+  color: #6495ED;
+}
+
+.tab1-1 a, .tab1-1 a:visited,.tab2-2 a, .tab2-2 a:visited{
+  color: white;
+}
+
+
+
+.tab_contents {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-top: 60px;
+}
+
+
+
+.tabmenu {
+  font-size: 30px;
+}
+
+.picture{
+  height: 600px;
+  background-size: cover;
+}
+
+.entry_button {
+  color: white;
+  font-size: 15px;
+  display: inline;
+  position: absolute;
+  top: 25px;
+  left: 250px;
+}
+
+.entry_button a:visited {
+  color: white;
+}
+
+.btn {
+  width: 30px;
+  font-size: 20px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.insert_youtube {
+  text-align: center;
+  height: 500px;
+}
+
+audio {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.new {
+  border-style: solid ;
+  border-width: 1px;
+  padding: 10px 5px 10px 20px;
+  border-color: #FFFF66;
+  color: #800000;
+  background-color: #FFFF66;
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #AAA;
+}
+
+li .videoresult {
+  width: 80%;
+  height: 500px;
+  background: linear-gradient(#fff, #F8F8FF);
+  font-size: 20px;
+  font-family: cursive;
+  list-style: none;
+}
+
+.upload-form {
+  position: fixed;
+  bottom: 0;
+}
