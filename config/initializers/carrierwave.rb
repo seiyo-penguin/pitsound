@@ -8,8 +8,8 @@ CarrierWave.configure do |config|
 
     case Rails.env
     when 'production'
-      config.fog_directory = 'pro-pitchsoundfiles'
-      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/pro-pitchsoundfiles'
+      config.fog_directory = 'pitchsoundfiles'
+      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/pitchsoundfiles'
 
     when 'development'
       config.fog_directory = 'pitchsoundfiles'
