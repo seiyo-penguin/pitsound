@@ -373,24 +373,24 @@ p.comments {
 
 .list-comments {
   list-style: none;
-    display: block;
-    content: "";
-    position: absolute;
-    left: 13.75px;
-    width: 95%;
-    height: 50px;
-    font-family: monospace;
+  display: block;
+  content: "";
+  position: absolute;
+  left: 13.75px;
+  width: 95%;
+  height: 50px;
+  font-family: monospace;
 }
 
 .mypage-list {
-    list-style: none;
-    display: block;
-    content: "";
-    position: absolute;
-    left: 13.75px;
-    width: 95%;
-    font-family: monospace;
-    bottom: 60px;
+  list-style: none;
+  display: block;
+  content: "";
+  position: absolute;
+  left: 13.75px;
+  width: 95%;
+  font-family: monospace;
+  bottom: 60px;
 }
 
 
@@ -444,9 +444,7 @@ p.comments {
   text-align: center;
   width: 50%;
   float: right;
-    height: 100px;
-
-
+  height: 100px;
   background-color: #000055
 
 }
@@ -455,7 +453,7 @@ p.comments {
   text-align: center;
   width: 50%;
   float: left;
-    height: 100px;
+  height: 100px;
   background-color: #000055
 }
 
@@ -463,8 +461,7 @@ p.comments {
   text-align: center;
   width: 50%;
   float: right;
-    height: 100px;
-
+  height: 100px;
   background: radial-gradient(#6495ED, #000055);
 
 }
@@ -499,12 +496,12 @@ p.comments {
 }
 
 .entry_button {
-color: white;
-font-size: 15px;
-display: inline;
-position: absolute;
-top: 25px;
-left: 250px;
+  color: white;
+  font-size: 15px;
+  display: inline;
+  position: absolute;
+  top: 25px;
+  left: 250px;
 }
 
 .entry_button a:visited {
@@ -530,14 +527,14 @@ audio {
 
 .new {
   border-style: solid ;
-   border-width: 1px;
-    padding: 10px 5px 10px 20px;
-     border-color: #FFFF66;
-      color: #800000;
-       background-color: #FFFF66;
-        width: 200px;
-         border-radius: 10px;
-          box-shadow: 5px 5px 5px #AAA;
+  border-width: 1px;
+  padding: 10px 5px 10px 20px;
+  border-color: #FFFF66;
+  color: #800000;
+  background-color: #FFFF66;
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #AAA;
 }
 
 li .videoresult {
