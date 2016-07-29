@@ -2,7 +2,7 @@
 
   <div>曲名：<%= @music.songtitle %></div>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/#{@music.uid}" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @music.uid %>" frameborder="0" allowfullscreen></iframe>
 
 
 
@@ -29,9 +29,7 @@
     </audio>
 
     </ul>
-    <% if user_signed_in? && current_user.id == upload_file.user_id %>
-    <%= link_to '削除', music_uploader_path, method: :delete %>
-    <% end %>
+
     </li>
 
 
@@ -48,6 +46,7 @@
     <%= form_for @upload, url: uploader_upload_path do |f| %>
       <%= f.hidden_field :songtitle, :value => @music.songtitle %>
       <%= f.hidden_field :music_id, :value => @music.id %>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
       <%= f.label :title, "title" %>
       <%= f.text_field :title %>
 

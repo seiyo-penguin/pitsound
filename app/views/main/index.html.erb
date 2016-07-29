@@ -36,13 +36,13 @@
 
     <div class="tab_contents clearfix">
             <div class="tab1-2" name="tab1">
-            <%= link_to 'Songs', "/music", method: :get , class: "tabmenu"%>
+            <%= link_to 'Search', "/music", method: :get , class: "tabmenu"%>
 
 
             </div>
             <div class="tab2-1" name="tab2">
             <% if user_signed_in? %>
-              <%= link_to 'Mypage', "/users/:id", method: :get , class: "tabmenu"%>
+              <%= link_to 'Mypage', user_path(current_user), method: :get , class: "tabmenu"%>
             <% else %>
             <%= link_to 'Login', "/users/sign_in", method: :get , class: "tabmenu"%>
           <% end %>

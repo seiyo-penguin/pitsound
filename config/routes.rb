@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'music/uploader/search' => 'uploader#search'
   get 'music/search/' => 'music#search'
   post 'music/new' => 'music#create'
+  patch '/music/:music_id/uploader/:id' => 'uploader#update'
 
   devise_for :users
   resources :users, only: :show

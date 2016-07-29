@@ -12,6 +12,7 @@ class MusicController < ApplicationController
 
 # @music = Music.where(uid: music_params)
   # unless @music
+    binding.pry
     @music = Music.create(music_params)
 
     redirect_to "/music/#{@music.id}"
@@ -48,5 +49,12 @@ class MusicController < ApplicationController
     params.permit(:music_id)
   end
 
+  def destroy
+    @upload_file = UploadFile.find(params[:id])
+    if upload_file.user_id == current_user.id
+      upload_file.destroy
+    end
+    redirect_to music_path(@music)
+  end
 
 end

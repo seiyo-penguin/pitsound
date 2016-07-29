@@ -1,0 +1,17 @@
+<div class="contents row">
+
+    <%= form_for @upload_file, url: "/music/#{@upload_file.music_id}/uploader/#{@upload_file.id}" do |f| %>
+      <h3>
+        編集する
+      </h3>
+      <%= f.hidden_field :songtitle, :value => @upload_file.songtitle %>
+      <%= f.hidden_field :music_id, :value => @upload_file.music_id %>
+      <textarea cols="30" name="text" placeholder="text" rows="10"><%= @upload_file.title %></textarea>
+
+      <%= f.label :file %>
+      <%= f.file_field :file %>
+      <%= f.submit "Upload" %>
+
+    <% end %>
+
+  </div>d

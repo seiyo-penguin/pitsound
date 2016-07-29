@@ -11,22 +11,18 @@
 
   <form id="search" onsubmit="return false;">
     <input type="text" class="textbox" value=<%= @songtitle%> id="q" size="40" name="songtitle">
-    <button type="submit" value="検索" class="btn"><span aria-hidden="true"></span></button>
+    <button type="submit" value="この曲の動画を検索" class="btn"><span></span></button>
   </form>
 
 
     <%= form_for @music, :url => {:action => 'create'} do |f| %>
-      <%= f.hidden_field :songtitle %>
-      <%= f.label :uid, "動画のURL" %>
+      <%= f.label :songtitle, "曲名"%>
+      <!-- <input type="text" class="textbox" value=<%= @songtitle%> id="q" size="40" name="songtitle"> -->
+      <%= f.hidden_field :songtitle, value: @songtitle %><br>
+      <%= f.label :uid, "以下の動画から選ぶまたはYoutubeの埋め込みコードを貼り付ける" %>
       <%= f.text_field :uid %>
       <%= f.submit "この曲のアレンジを投稿する" %>
+      <div class="insert_youtube">
+      </div>
 
-    <% end %>
-
-<form id="youtube" onsubmit="return false;">
-
-<div class="insert_youtube">
-</div>
-
-</form>
-
+<% end %>

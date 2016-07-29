@@ -22,14 +22,20 @@
   </div>
 
 </div> -->
-<%= form_tag('/music/search', method: :get) do %>
-                <input class="search__query" name="songtitle" placeholder="投稿したい曲を検索" type="text" value=""><button class="btn-search" songtitle="検索" type="submit"><i class="icon-search"></i></button></input>
-              <% end %>
+<% if user_signed_in? %>
 
+    <%= form_tag('/music/search', method: :get) do %>
+                <input class="search__query" name="songtitle" placeholder="投稿したい曲を検索" type="text" value=""><button class="btn-search" songtitle="検索" type="submit"><i class="icon-search"></i></button></input>
+    <% end %>
+<% else %>
+<%= link_to '投稿したい方はLogin！', "/users/sign_in", method: :get , class: "tabmenu"%>
+
+</div>
+
+<% end %>
   <div class="new"><h2>☆What's new☆</h2></div>
 
-
-      <% UploadFile.all.reverse_order.each do |upload_file| %>
+<% UploadFile.all.reverse_order.each do |upload_file| %>
 <ul class="list-menu">
 
 
@@ -64,11 +70,11 @@
 
     <div class="tab_contents clearfix">
             <div class="tab1-1" name="tab1">
-             <%= link_to 'Songs', "/music", method: :get , class: "tabmenu"%>
+             <%= link_to 'Search', "/music", method: :get , class: "tabmenu"%>
            </div>
             <div class="tab2-1" name="tab2">
             <% if user_signed_in? %>
-              <%= link_to 'Mypage', "/users/:id", method: :get , class: "tabmenu"%>
+              <%= link_to 'Mypage', user_path(current_user), method: :get , class: "tabmenu"%>
             <% else %>
             <%= link_to 'Login', "/users/sign_in", method: :get , class: "tabmenu"%>
           <% end %>

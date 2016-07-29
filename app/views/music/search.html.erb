@@ -1,6 +1,6 @@
 
 <% if user_signed_in? %>
-              <%= link_to 'Mypage', "/users/:id", method: :get , class: "tabmenu"%>
+              <%= link_to 'Mypage', user_path(current_user), method: :get , class: "tabmenu"%>
             <% else %>
             <%= link_to 'Login', "/users/sign_in", method: :get , class: "tabmenu"%>
           <% end %>
@@ -26,8 +26,7 @@
     <a href="#">
     </a>
 
-
-<iframe width="560" height="315" src= <%= music.uid %> frameborder="0" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/#{@music.uid}" frameborder="0" allowfullscreen></iframe>
 
   </a>
   </div>
