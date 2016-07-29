@@ -72,3 +72,8 @@ group :production do
   gem 'rails_12factor'
   gem 'pg'
 end
+
+# For Carrierwave
+gem 'fog'
+
+gem 'dotenv-rails'
