@@ -13,18 +13,7 @@
 </form>
   </div>
 
-<ul id="list"></ul>
- <div id="search">
-
-
-<div class="insert_youtube">
-
-  </div>
-
-</div>
-
-<%= link_to '新規投稿', uploader_form_path(@upload_file, songtitle: @songtitle), method: :get , class: "upload-yours clearfix", id: "post_a" %>
-  <h2 class="new">☆What's new☆</h2>
+  <h2 class="new">検索結果</h2>
 
 
 <% @upload_file.reverse_order.each.with_index do |upload_file, num| %>
@@ -36,7 +25,7 @@
 
   <li>
   <a href="#">
-    <p class="username">Username:<%= upload_file.user_id %></p>
+    <p class="username">Userid:<%= upload_file.user_id %></p>
 
    <br>
 
@@ -52,6 +41,7 @@
 
     </ul>
   </a>
+
   </li>
 
 
@@ -70,7 +60,7 @@
            </div>
             <div class="tab2-1" name="tab2">
             <% if user_signed_in? %>
-              <%= link_to 'Mypage', "/users/:id", method: :get , class: "tabmenu"%>
+              <%= link_to 'Mypage', user_path(current_user), method: :get , class: "tabmenu"%>
             <% else %>
             <%= link_to 'Login', "/users/sign_in", method: :get , class: "tabmenu"%>
           <% end %>

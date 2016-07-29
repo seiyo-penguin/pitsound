@@ -18,28 +18,32 @@
   </div>
 
   <ul class="mypage-list">
-  <%= link_to '新規投稿', uploader_form_path(@upload_file), method: :get , class: "upload-new" %>
 
 
 
 
 
 
-  <% User.all do |upload_file| %>
+
+  <% @upload_file.each do |upload_file| %>
     <ul class="list-menu">
       <div class="right-content">
         <li>
           <a href="#">
-            <p class="username">Username:<%= current_user.username %></p>
+            <p class="username">曲名:<%= upload_file.songtitle %></p>
           </a><br>
           <a href="#">Title:
             <%= upload_file.title %>
-            <a href="/uploader/#/comments/index">コメント一覧</a>
+            <%= link_to 'コメント一覧', music_uploader_comments_path(upload_file.music_id, upload_file.id), method: :get , class: "upload-yours clearfix", id: "post_a"%>
           </a>
           <ul>
             <audio controls src= <%= upload_file.file %>>
             </audio>
           </ul>
+    <% if user_signed_in? && current_user.id == upload_file.user_id %>
+      <%= link_to '編集', edit_music_uploader_path(upload_file.music_id,upload_file.id), method: :get %>
+    <%= link_to '削除', music_uploader_path(upload_file.music_id,upload_file.id), method: :delete %>
+    <% end %>
         </li>
       </div>
     </ul>
@@ -84,7 +88,7 @@
             </div>
             <div class="tab2-2" name="tab2">
             <% if user_signed_in? %>
-              <%= link_to 'Mypage', "/users/:id", method: :get , class: "tabmenu"%>
+              <%= link_to 'Mypage', user_path(current_user), method: :get , class: "tabmenu"%>
             <% else %>
             <%= link_to 'Login', "/users/sign_in", method: :get , class: "tabmenu"%>
           <% end %>

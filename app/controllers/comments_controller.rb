@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!, only: :new
 
  def index
-  @comments = Comment.where(upload_file_id: params[:uploader_id])
+  @comments = Comment.where(uploader_id: params[:uploader_id])
   @upload_file = UploadFile.find(params[:uploader_id])
  end
 
@@ -12,14 +12,14 @@ class CommentsController < ApplicationController
   end
 
   def create
-    Comment.create(create_params)
+    @comment = Comment.create(create_params)
     redirect_to controller: :comments, action: :index
   end
 
 
  private
   def create_params
-   params.require(:comment).permit(:nickname, :rate, :comment).merge(upload_file_id: params[:upload_file.id])
+   params.require(:comment).permit(:nickname, :rate, :comments).merge(uploader_id: params[:uploader_id])
   end
 
 end

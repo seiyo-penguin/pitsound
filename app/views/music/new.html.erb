@@ -3,35 +3,45 @@
 
 
 
-
-<!-- 
-<form method="get" action="#" id="search">
-
-  <form id="search" onsubmit="return false;">
-    <input type="text" class="textbox" placeholder="曲名で検索" id="q" size="40" name="songtitle">
-    <button type="submit" value="検索" class="btn"><span aria-hidden="true"></span></button>
-  </form>
-
-
-
-<ul id="list"></ul>
- <div id="search">
-
-
-<div class="insert_youtube">
-
-  </div>
-
-</div> -->
     <h3>
       Congratulations! You are the first to upload this song!
       アレンジのオリジナル曲を登録してください。
     </h3>
-    <%= form_for @music, :url => {:action => 'create'} do |f| %>
-      <%= f.label :songtitle, "曲名" %>
-      <%= f.text_field :songtitle %>
-      <%= f.label :uid, "動画のURL" %>
-      <%= f.text_field :uid %>
-      <%= f.submit "登録" %>
 
-    <% end %>
+
+  <form id="search" onsubmit="return false;">
+    <input type="text" class="textbox" value=<%= @songtitle%> id="q" size="40" name="songtitle">
+    <button type="submit" value="この曲の動画を検索" class="btn"><span></span></button>
+  </form>
+
+
+    <%= form_for @music, :url => {:action => 'create'} do |f| %>
+      <%= f.label :songtitle, "曲名"%>
+      <!-- <input type="text" class="textbox" value=<%= @songtitle%> id="q" size="40" name="songtitle"> -->
+      <%= f.hidden_field :songtitle, value: @songtitle %><br>
+      <%= f.label :uid, "以下の動画から選ぶまたはYoutubeの埋め込みコードを貼り付ける" %>
+      <%= f.text_field :uid %>
+      <%= f.submit "この曲のアレンジを投稿する" %>
+      <div class="insert_youtube">
+      </div>
+
+<% end %>
+
+
+<footer>
+
+     <div class="tab_contents clearfix">
+            <div class="tab1-1" name="tab1">
+             <%= link_to 'Search', "/music", method: :get , class: "tabmenu"%>
+           </div>
+            <div class="tab2-1" name="tab2">
+            <% if user_signed_in? %>
+              <%= link_to 'Mypage', user_path(current_user), method: :get , class: "tabmenu"%>
+            <% else %>
+            <%= link_to 'Login', "/users/sign_in", method: :get , class: "tabmenu"%>
+          <% end %>
+
+            </div>
+    </div>
+
+</footer>

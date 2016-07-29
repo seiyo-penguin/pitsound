@@ -2,7 +2,7 @@
 
   <div>曲名：<%= @music.songtitle %></div>
 
-<iframe width="560" height="315" src= <%= @music.uid %> frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @music.uid %>" frameborder="0" allowfullscreen></iframe>
 
 
 
@@ -10,13 +10,14 @@
 
 
 <% @upload_file.reverse_order.each do |upload_file| %>
+
 <ul class="list-menu">
 
 
   </div>
   <div class="right-content">
     <li>
-    <p class="username">Username:<%= upload_file.user_id %></p>
+    <p class="username">Userid:<%= upload_file.user_id %></p>
     <a href="#">Title:
       <%= upload_file.title %></a><br>
     <a href="#">
@@ -28,6 +29,7 @@
     </audio>
 
     </ul>
+
     </li>
 
 
@@ -44,6 +46,7 @@
     <%= form_for @upload, url: uploader_upload_path do |f| %>
       <%= f.hidden_field :songtitle, :value => @music.songtitle %>
       <%= f.hidden_field :music_id, :value => @music.id %>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
       <%= f.label :title, "title" %>
       <%= f.text_field :title %>
 
@@ -54,3 +57,22 @@
     <% end %>
 
   </footer>
+
+
+  <footer>
+
+     <div class="tab_contents clearfix">
+            <div class="tab1-1" name="tab1">
+             <%= link_to 'Search', "/music", method: :get , class: "tabmenu"%>
+           </div>
+            <div class="tab2-1" name="tab2">
+            <% if user_signed_in? %>
+              <%= link_to 'Mypage', user_path(current_user), method: :get , class: "tabmenu"%>
+            <% else %>
+            <%= link_to 'Login', "/users/sign_in", method: :get , class: "tabmenu"%>
+          <% end %>
+
+            </div>
+    </div>
+
+</footer>

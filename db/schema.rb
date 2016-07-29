@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160728074946) do
+ActiveRecord::Schema.define(version: 20160728113338) do
 
   create_table "comments", force: :cascade do |t|
-    t.integer  "nickname",       limit: 4
     t.integer  "rate",           limit: 4
     t.text     "comments",       limit: 65535
     t.integer  "uploader_id",    limit: 4
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.string   "upload_file_id", limit: 255
+    t.text     "nickname",       limit: 65535
   end
 
   create_table "musics", force: :cascade do |t|

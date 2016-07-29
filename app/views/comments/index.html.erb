@@ -4,18 +4,17 @@
 
  <div class="contents row">
     <div class="success">
-      <a class="btn" href="/tweets">投稿一覧へ戻る</a>
+    <%= link_to "@upload_file.songtitleの投稿一覧へ戻る", :back %>
     </div>
   </div>
 
 <div class="comments-title">
 
-  <p class="username"><%= @upload_file.title %></p>
+  <p class="username">Title：<%= @upload_file.title %></p>
   <audio controls src= <%= @upload_file.file %>>
   </audio>
   </div>
   <HR color="#191970">
-
 
 <div class="comments-content clearfix">
 
@@ -23,19 +22,19 @@
     <HR color="#191970">
 
 <ul class="list-comments clearfix">
-   <% @comments.each do |comment| %>
+   <% @comments.reverse_order.each do |comment| %>
                 <li style="border-bottom: dotted 1px">
-                  <div class="thumbnail__caption">
-                    <h3 class="text-xsmall text-overflow" title="<%= comment.nickname %>">
+
+<!--                     <h3 class="text-xsmall text-overflow" title="<%= comment.nickname %>"> -->
+  <div>ニックネーム</div>
                       <span><i class="text-xxsmall" title=""></i></span><%= comment.nickname %>
                     </h3>
-                    <p class="text-small">
-                      <span class="rating-star"><i class="star-actived rate-[ここに評価を表示]0"></i></span>
+                    <p class="text-small">評価
+                      <span class="rating-star"><i class="star-actived rate-<%= comment.rate %>0"></i></span>
                     </p>
-                    <p>
-                      <%= comment.comment %>
+                    <p>コメント：
+                      <%= comment.comments %>
                     </p>
-                  </div>
                 </li>
                 <% end %>
 <!--     <li>  <a href="#"><p class="username">Username</p></a><a href="#">コメント１</a></li>
@@ -50,13 +49,13 @@
 
 <footer>
 
-    <div class="tab_contents clearfix">
+     <div class="tab_contents clearfix">
             <div class="tab1-1" name="tab1">
              <%= link_to 'Search', "/music", method: :get , class: "tabmenu"%>
            </div>
             <div class="tab2-1" name="tab2">
             <% if user_signed_in? %>
-              <%= link_to 'Mypage', "/users/:id", method: :get , class: "tabmenu"%>
+              <%= link_to 'Mypage', user_path(current_user), method: :get , class: "tabmenu"%>
             <% else %>
             <%= link_to 'Login', "/users/sign_in", method: :get , class: "tabmenu"%>
           <% end %>
@@ -65,6 +64,7 @@
     </div>
 
 </footer>
+
 
 
 
@@ -82,11 +82,12 @@
     <%= form_for @comment, url: music_uploader_comments_path, method: :post do |f| %>
       <%= f.hidden_field :uploader_id, :value => @upload_file.id %>
       <%= f.label :nickname, "ニックネーム" %>
+      <%= f.text_field :nickname %>
       <%= f.label :評価, style: { 'margin-right' => 8 } %>
             <%= f.number_field :rate, placeholder: '評価', value: 1, max: 10, min: 1, html: { class: "search__query", style: 'text-align: right;' } %>
 
       <%= f.label :comments, "コメント" %>
-      <%= f.file_field :comments %>
+      <%= f.text_field :comments %>
       <%= f.submit "Upload" %>
 
     <% end %>
