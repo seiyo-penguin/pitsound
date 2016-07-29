@@ -11,12 +11,14 @@ class UploaderController < ApplicationController
 
   def show
     @uploader = UploadFile.find(params[:uploader_id])
+    @user = User.find(id: @upload_file.user_id)
   end
 
 
 
   def search
     @upload_file = UploadFile.where(songtitle: params[:keyword]).limit(20)
+
 
   end
 

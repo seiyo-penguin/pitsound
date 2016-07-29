@@ -39,3 +39,21 @@
 
   </div>
 <% end %>
+
+
+
+
+<footer>
+
+     <div class="tab_contents clearfix">
+            <div class="tab1-1" name="tab1">
+             <%= link_to 'Search', "/music", method: :get , class: "tabmenu"%>
+           </div>
+            <div class="tab2-1" name="tab2">
+            <%= link_to 'Mypage', user_path(current_user), method: :get , class: "tabmenu"%>
+
+
+            </div>
+    </div>
+
+</footer>

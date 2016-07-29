@@ -34,7 +34,7 @@
           </a><br>
           <a href="#">Title:
             <%= upload_file.title %>
-            <a href="/uploader/#/comments/index">コメント一覧</a>
+            <%= link_to 'コメント一覧', music_uploader_comments_path(upload_file.music_id, upload_file.id), method: :get , class: "upload-yours clearfix", id: "post_a"%>
           </a>
           <ul>
             <audio controls src= <%= upload_file.file %>>
