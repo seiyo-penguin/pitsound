@@ -61,3 +61,14 @@ gem 'trollop', '~> 2.1'
   gem 'mechanize'
   gem 'carrierwave'
 gem 'kaminari'
+
+group :production, :staging do
+  gem 'rails_12factor'
+end
+
+gem 'mysql2', '0.3.18'
+
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+end
