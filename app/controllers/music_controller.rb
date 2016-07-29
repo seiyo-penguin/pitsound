@@ -27,7 +27,7 @@ class MusicController < ApplicationController
 
   @music = Music.find(params[:id])
   @upload_file = UploadFile.where(music_id: params[:id])
-  @user = User.find(params[:user_id])
+
       # @uploader = UploadFile.find(params[:uploader_id])
   end
 
