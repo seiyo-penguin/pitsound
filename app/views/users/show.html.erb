@@ -31,7 +31,7 @@
             <div class="play">
               <a class="playbutton" onClick="sound()">再生する</a>
             </div>
-            <audio controls src= <%= upload_file.file %>>
+            <audio id="sound-file" controls src= <%= upload_file.file %>>
             </audio>
           </ul>
     <% if user_signed_in? && current_user.id == upload_file.user_id %>

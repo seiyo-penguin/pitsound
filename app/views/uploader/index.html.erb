@@ -42,7 +42,10 @@
     <a href="/uploader/<%= @upload_file.id %>/comments/index">コメント一覧</a>
 
     <ul>
-    <audio controls src= <%= upload_file.file %>>
+    <div class="play">
+    <a class="playbutton" onClick="sound()">再生する</a>
+  </div>
+    <audio id="sound-file" controls src= <%= upload_file.file %>>
     </audio>
 
     </ul>
