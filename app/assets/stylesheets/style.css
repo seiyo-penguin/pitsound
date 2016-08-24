@@ -571,7 +571,8 @@ p.comments {
 
 audio {
   width: 100%;
-  margin-bottom: 5px;
+  display: block;
+  margin:0px;
 }
 
 .new {
@@ -834,4 +835,17 @@ li.commentlist {
 
 .contents {
   top: 20%;
+}
+
+a.playbutton {
+  font-size: 40px;
+  color: white;
+}
+
+.play {
+  height: 80px;
+  width: 250px;
+  border-color: #006699;
+  background-color: #FF97C2;
+  margin-bottom:10px;
 }

@@ -19,6 +19,9 @@ Title:
     <%= link_to 'コメント一覧', music_uploader_comments_path(@music, upload_file.id), method: :get , class: "upload-yours clearfix", id: "post_a"%>
   </p>
     <ul>
+  <div class="play">
+    <a class="playbutton" onClick="sound()">再生する</a>
+  </div>
       <audio controls src= <%= upload_file.file %>>
       </audio>
     </ul>

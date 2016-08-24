@@ -4,6 +4,9 @@
 </div>
 <div class="comments-title">
   <p class="username">Title：<%= @upload_file.title %></p>
+  <div class="play">
+    <a class="playbutton" onClick="sound()">再生する</a>
+  </div>
   <audio controls src= <%= @upload_file.file %>>
   </audio>
 </div>

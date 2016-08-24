@@ -20,6 +20,9 @@
           <% @music = Music.where(id: upload_file.music_id) %>
           <%= link_to 'コメント一覧', music_uploader_comments_path(@music[0], upload_file.id), method: :get , class: "upload-yours clearfix", id: "post_a"%>
         <ul>
+  <div class="play">
+    <a class="playbutton" onClick="sound()">再生する</a>
+  </div>
           <audio controls src= <%= upload_file.file %>>
           </audio>
         </ul>

@@ -32,11 +32,15 @@
         タイトル:
           <%= upload_file.title %><br>
         </p>
-        <h2>(Userid:<%= upload_file.user_id %>)</h2>
+        <h2>(Userid:<%= upload_file.user_id %>)<br></h2>
         <% @music = Music.where(id: upload_file.music_id) %>
+
         <%= link_to 'コメント一覧', music_uploader_comments_path(@music[0], upload_file.id), method: :get , class: "upload-yours clearfix", id: "post_a"%>
         <ul>
-          <audio controls src= <%= upload_file.file %> class="audiosize">
+      <div class="play">
+        <a class="playbutton" onClick="sound()">再生する</a>
+      </div>
+          <audio id="sound-file" controls src= <%= upload_file.file %> class="audiosize">
           </audio>
         </ul>
       </li>
