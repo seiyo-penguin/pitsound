@@ -611,7 +611,7 @@ li .videoresult {
   position: relative;
   height: 653px;
   width: 100%;
-  background-image: url("/assets/listen.jpg");
+  background-image: url("listen.jpg");
 }
 
 .uploadbox {
