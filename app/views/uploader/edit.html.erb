@@ -1,17 +1,31 @@
 <div class="contents row">
-
     <%= form_for @upload_file, url: "/music/#{@upload_file.music_id}/uploader/#{@upload_file.id}" do |f| %>
-      <h3>
+      <h1>
         編集する
-      </h3>
+      </h1>
       <%= f.hidden_field :songtitle, :value => @upload_file.songtitle %>
       <%= f.hidden_field :music_id, :value => @upload_file.music_id %>
-      <textarea cols="30" name="text" placeholder="text" rows="10"><%= @upload_file.title %></textarea>
-
-      <%= f.label :file %>
-      <%= f.file_field :file %>
-      <%= f.submit "Upload" %>
+      <textarea cols="30" name="text" placeholder="タイトル" rows="10" class="titlefield"><%= @upload_file.title %></textarea><br>
+      <%= f.file_field :file, :class => "filefield" %><br>
+      <%= f.submit "Upload", :class => "uploadbutton" %>
 
     <% end %>
 
-  </div>d
+</div>
+
+<footer>
+  <div class="tab_contents clearfix">
+          <div class="tab1-2" name="tab1">            <%= link_to 'Search', "/music", method: :get , class: "tabmenu"%>
+          </div>
+          <div class="tab2-2" name="tab2">
+          <% if user_signed_in? %>
+            <%= link_to 'Mypage', user_path(current_user), method: :get , class: "tabmenu"%>
+          <% else %>
+          <%= link_to 'Login', "/users/sign_in", method: :get , class: "tabmenu"%>
+        <% end %>
+            <!-- <a href="#tab2" class="tabmenu">Mypage</a> -->
+            <!-- <%= link_to 'ログイン', "/users/sign_in", method: :get , class: "tabmenu"%> -->
+            <!-- <%= link_to 'ログアウト', "/users/sign_out", method: :delete , class: "tabmenu"%> -->
+          </div>
+  </div>
+</footer>

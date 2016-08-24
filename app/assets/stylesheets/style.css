@@ -12,11 +12,11 @@ a:visited {text-decoration:none }
 
 
 body {
-  background-color: #D7EEFF;
   font-size: 14px;
   color: #333;
   margin: 0 0 60px 0;
   padding: 0;
+  background-image: url("body.jpg");
 }
 
 h1,h2,h3,h4,h5,h6,p {
@@ -35,31 +35,37 @@ header {
   color: #6495ED;
   display: inline;
   position: absolute;
-  font-size: 30px;
+  font-size: 60px;
 }
 
-form#search div {
-width: 300px; /* ボックスの幅 */
-padding: 0 0; /* ボックスのパディング（上下、左右） */
-background-color: #ffffff; /* ボックスの背景色 */
-border: 1px #808080 solid; /* ボックスの境界線 */
-position: absolute;
-margin: 0 auto;
-top: 150;
-}
 
 /* --- テキストボックス --- */
-form#search input.textBox {
-width: 150px; /* テキストボックスの幅 */
-height: 50px;
-margin: 0 auto 0 auto; /* テキストボックスのマージン（上右下左） */
+input.textbox {
+width: 500px; /* テキストボックスの幅 */
+height: 80px;
+margin: 0 auto; /* テキストボックスのマージン（上右下左） */
 padding: 0;
 background-color: #ffffff; /* テキストボックスの背景色 */
 border: none; /* テキストボックスの境界線（なし） */
 color: #000000;
-font-size: 20px;
-margin: 0 auto;
+font-size: 50px;
+}
 
+button.btn {
+  width: 120px;
+  height: 80px;
+  padding: 0;
+  margin-top: -24px;
+  background-color: yellow;
+}
+
+.registervideo {
+  width: 500px;
+  height: 90px;
+  padding: 0;
+  margin-top: -24px;
+  background-color: yellow;
+  font-size: 35px;
 }
 
 input.btn2 {
@@ -80,8 +86,6 @@ position: absolute;
   margin-top: 0;
   margin-bottom: -6px;
   padding-bottom: 0;
-  background: #FFF url('top_1.jpeg') no-repeat center top scroll;
-  font-size: 30px;
 
 
 }
@@ -91,7 +95,6 @@ position: absolute;
   margin-top: 0;
   margin-bottom: -6px;
   padding-bottom: 0;
-  font-size: 30px;
 }
 
 .bottom-content ul{
@@ -99,34 +102,38 @@ position: absolute;
   margin-top: 0;
   margin-bottom: -6px;
   padding-bottom: 0;
-  font-size: 30px;
 }
 
 .clearfix:after {
-
   clear: both;
   display: block;
   content: "";
 }
 
+.clearfix {
+  clear: both;
+  display: block;
+  content: "";
+}
 .pr-sentence1 {
   position:absolute;
-  top: 100px;
-  left:45px;
+  top: 50%;
+  left:50%;
   width: 460px;
   font-family: sans-serif;
-  color: #FFF;
+  color: #fff;
   font-weight: bold;
   text-shadow: 1px 1px 1px #191970,
   -1px 1px 1px #191970,
   1px -1px 1px #191970,
   -1px -1px 1px #191970;
+  font-size: 30px;
 }
 
 .pr-sentence2 {
   position:absolute;
-  top:160px;
-  left:55px;
+  bottom:50%;
+  right:50%;
   width: 450px;
   font-family: sans-serif;
   color: #FFF;
@@ -135,20 +142,20 @@ position: absolute;
   -1px 1px 1px #191970,
   1px -1px 1px #191970,
   -1px -1px 1px #191970;
+  font-size: 30px;
 }
 .pr-sentence3 {
   position:absolute;
-  top:180px;
-  left:80px;
+  top:50%;
+  left: 50%;
   width: 450px;
   font-family: sans-serif;
-  color: #FFF;
+  color: #fff;
   font-weight: bold;
-  text-shadow: 1px 1px 1px #191970,
-  -1px 1px 1px #191970,
-  1px -1px 1px #191970,
-  -1px -1px 1px #191970;
+  text-shadow: 0 2px 0 #755d41,0 2px 1px rgba(0,0,0,0.8);
+  font-size: 30px;
 }
+
 
 .mypage {
   font-family: cursive;
@@ -160,15 +167,21 @@ position: absolute;
 }
 
 .user {
-  background-color: #FFF;
   text-align: center;
-  font-family: cursive;
   font-size: 12px;
 }
 
+.userupload {
+  top: 903px;
+  color:white;
+  text-align: center;
+  font-family: cursive;
+  font-size: 30px;
+  margin-bottom: -18px;
+}
+
 .userprofile {
-  background-color: #D7EEFF;
-  height: 600px;
+  height: 650px;
 }
 
 .upload-new {
@@ -217,32 +230,26 @@ ul {
 }
 
 .container_demo {
+  margin-top: 200px;
   text-align: center;
+  font-size: 50px;
 }
 
 .button {
   top: 10px;
   right: 50px;
   width: 80px;
-  height: 20px;
-}
-
-button.btn {
-  top: 15px;
-  width: 50px;
-  height: 20px;
-  margin-left: 70px;
-  background-color: #000055;
+  height: 30px;
 }
 
 .uploadcontents {
     position: fixed;
     left: 0px;
-    top: 80%;
-    bottom: 0;
+    bottom: 4%;
     right: 0;
     text-align: center;
     font-weight: normal;
+    font-size: 30px;
     strong {
       font-weight: bold;
       padding-right: 5px;
@@ -284,18 +291,17 @@ button.btn {
 
 
 .upload-yours {
-  background-color: #4169E1;
   color: #FFF;
   text-align: center;
-  font-size: 20px;
+  font-size: 40px;
   font-family: fantasy;
   border-style: solid ;
   border-width: 2px;
-  padding: 10px 5px 10px 5px;
-  width: 150px;
+  padding-top: 20px;
+  width: 250px;
   border-color: #006699;
-  background-color: #006699;
-  height: 45px;
+  background-color: #FF97C2;
+  height: 75px;
   margin-bottom: 0;
   margin-right: 10px;
   padding: 0;
@@ -322,13 +328,35 @@ height: 100%;
 
 
 li {
-  width: 100%;
-  height: 200px;
-  margin: 0;
-  background: linear-gradient(#fff, #F8F8FF);
-  font-size: 20px;
-  font-family: cursive;
-  list-style: none;
+/*  padding: .6em 1em;
+  background: #6927FF;
+  border-top: 1px solid #888;
+  border-right: 10px solid black;
+  border-bottom: 5px solid black;
+  border-left: 30px double black;
+  border-radius: 7px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.25em;*/
+    padding: 20px;
+    background: #fff;
+    border: 10px #FF6928 solid;
+    position: relative;
+    z-index: 10;
+}
+
+li:before {
+    content: "";
+    position: absolute;
+    background: #fff;
+    margin: 10px;
+    border: 10px #FF773E solid;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    z-index: -10;
 }
 
 
@@ -344,10 +372,11 @@ hr {
 }
 
 p.username {
-  padding-right: 10px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  width: 200px;
+  text-align: center;
+  font-size: 50px;
+  color: black;
+  font-family: font-family:'Lucida Grande','Hiragino Kaku Gothic ProN',
+ Meiryo, sans-serif;
 
 }
 
@@ -368,7 +397,7 @@ p.comments {
   padding-top: 10px;
   padding-bottom: 0px;
   padding-left: 15px;
-  font-size: 16px;
+  font-size: 40px;
 }
 
 .list-comments {
@@ -378,19 +407,35 @@ p.comments {
   position: absolute;
   left: 13.75px;
   width: 95%;
-  height: 50px;
+  height: 600px;
   font-family: monospace;
+  font-size: 30px;
+  overflow: auto;
+  margin-bottom: 100px;
 }
 
-.mypage-list {
+.list-videos {
   list-style: none;
   display: block;
   content: "";
   position: absolute;
   left: 13.75px;
   width: 95%;
+  height: 800px;
   font-family: monospace;
-  bottom: 60px;
+  font-size: 30px;
+  overflow: auto;
+  margin-bottom: 100px;
+}
+
+.mypage-list {
+  list-style: none;
+  display: block;
+  content: "";
+  position: relative;
+  font-family: monospace;
+  bottom: 100px;
+  top: 20px;
 }
 
 
@@ -407,12 +452,13 @@ p.comments {
 /*  float: right;*/
   width: 100%;
   text-align: center;
+  /*margin-bottom: 60px;*/
 }
 
 .row {
-  float: right;
-  padding-right: 10px;
-  font-size: 12px;
+  font-size: 40px;
+  color: white;
+  text-align: center;
 }
 
 .edit {
@@ -427,7 +473,7 @@ p.comments {
   font-family: cursive;
   margin-bottom: 0px;
   margin-top: 0px;
-  font-size: 60px;
+  font-size: 100px;
 }
 
 .tab1-1 {
@@ -445,7 +491,7 @@ p.comments {
   width: 50%;
   float: right;
   height: 100px;
-  background-color: #000055
+  background-color: #000055;
 
 }
 
@@ -487,21 +533,24 @@ p.comments {
 
 
 .tabmenu {
-  font-size: 30px;
+  font-size: 60px;
 }
 
 .picture{
-  height: 600px;
+  height:500px;
+  width: 500px;
   background-size: cover;
+  margin: 0 auto;
+  border: 10px dashed rgba(255,255,255,0.8);
+
 }
 
 .entry_button {
   color: white;
-  font-size: 15px;
+  font-size: 30px;
   display: inline;
   position: absolute;
   top: 25px;
-  left: 250px;
 }
 
 .entry_button a:visited {
@@ -529,19 +578,24 @@ audio {
   border-style: solid ;
   border-width: 1px;
   padding: 10px 5px 10px 20px;
-  border-color: #FFFF66;
-  color: #800000;
-  background-color: #FFFF66;
-  width: 200px;
+  border-color: blue;
+  color: #FFF;
+  background-color: #FF6928;
+  width: 500px;
+  height: 80px;
+  font-size: 60px;
   border-radius: 10px;
   box-shadow: 5px 5px 5px #AAA;
+  position: relative;
+  margin: 10px auto;
+  text-align: center;
 }
 
 li .videoresult {
   width: 80%;
-  height: 500px;
+  height: 200px;
   background: linear-gradient(#fff, #F8F8FF);
-  font-size: 20px;
+  font-size: 50px;
   font-family: cursive;
   list-style: none;
 }
@@ -549,4 +603,235 @@ li .videoresult {
 .upload-form {
   position: fixed;
   bottom: 0;
+}
+
+
+.searchbox {
+  position: relative;
+  height: 653px;
+  width: 100%;
+  background-image: url("listen.jpg");
+}
+
+.uploadbox {
+  height: 653px;
+  background-image: url("playtheguitar.jpg");
+  background-size: contain;
+}
+
+.search__query {
+  border:none;
+  height: 80px;
+  width: 780px;
+  font-size: 45px;
+}
+
+.searchcenter {
+  text-align: center;
+}
+
+button.btn-search {
+  height: 100px;
+  width: 100px;
+  padding: 0px;
+  background-image: url("search2.png");
+  background-size: 100px;
+}
+
+button.btn-search2 {
+  height: 100px;
+  width: 100px;
+  padding: 0px;
+  background-image: url("search.png");
+  background-size: 100px;
+}
+
+.commentsfield {
+  height: 150px;
+  width: 70%;
+  font-size: 40px;
+}
+
+.list-menu {
+  list-style: none;
+  display: block;
+  content: "";
+  position: relative;
+  width: 100%;
+  font-family: monospace;
+  top: 0px;
+}
+
+.searchsentence {
+  padding-top: 100px;
+  text-align: center;
+  font-size: 70px;
+  color: white;
+  color: lighten(white, 10%);
+  text-shadow: 0 0 1em rgba(0,0,0,0.9);
+
+}
+
+.searchsentence2 {
+  padding-top: 100px;
+  text-align: center;
+  font-size: 70px;
+  color: white;
+  color: lighten(white, 10%);
+  text-shadow: 0 0 1em rgba(0,0,0,0.9);
+
+}
+
+.login {
+  font-size: 70px;
+  height: 800px;
+}
+
+.col-xs-6 {
+  height: 30px;
+  width: 30px;
+}
+
+.submit {
+  height: 70px;
+  width: 150px;
+  font-size: 50px;
+}
+
+.signup {
+  font-size: 30px;
+  color: white;
+}
+.change_link {
+  font-size: 30px;
+  color: black;
+}
+.actions {
+  height: 80px;
+  width: 220px;
+  margin: 0, auto;
+  font-size: 35px;
+}
+
+li.commentlist {
+  margin-bottom: 10px;
+  background: linear-gradient(#fff, #F8F8FF);
+  font-family: cursive;
+  color: black;
+  list-style: none;
+  border: 3px solid #ccc;
+  border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
+}
+
+.nicknamefield {
+  height: 50px;
+  width: 180px;
+  font-size: 30px;
+}
+
+.ratefield {
+  height: 50px;
+  width: 65px;
+  font-size: 30px;
+}
+.blank {
+  margin-bottom: 120px;
+  position: relative;
+}
+
+.uploadbutton {
+  height: 60px;
+  width: 120px;
+  font-size: 30px;
+  background-color: #000055;
+  color: white;
+  margin: 10px;
+}
+.list-music {
+  list-style: none;
+  display: block;
+  content: "";
+  position: absolute;
+  left: 13.75px;
+  width: 95%;
+  height: 800px;
+  font-family: monospace;
+  font-size: 30px;
+  overflow: auto;
+  margin-bottom: 100px;
+}
+
+.whitefont {
+  color: white;
+}
+
+.titlesearch {
+  font-size: 50px;
+  padding: 0px;
+}
+
+
+.uploadcontents2 {
+    position: fixed;
+    left: 0px;
+    bottom: 4%;
+    right: 0;
+    text-align: center;
+    font-weight: normal;
+    font-size: 30px;
+    strong {
+      font-weight: bold;
+      padding-right: 5px;
+      font-size: 1.2em;
+  }
+}
+
+.filefield {
+  font-size: 30px;
+  background-color: pink;
+}
+
+.titlefield {
+  height: 50px;
+  width: 400px;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.uploadfont {
+  color: white;
+  font-size: 30px;
+}
+.newfont {
+  font-size: 40px;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+
+.newfont2 {
+  font-size: 40px;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+.search {
+  margin: 0 auto;
+}
+
+.urlfield {
+  width: 410px;
+  font-size: 20px;
+}
+.checkbox {
+  height: 50px;
+  width: 50px;
+}
+
+
+.contents {
+  top: 20%;
 }

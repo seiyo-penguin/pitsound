@@ -1,95 +1,65 @@
-
-    <title>Pitchsound コメント</title>
-
-
- <div class="contents row">
-    <div class="success">
-    <%= link_to "@upload_file.songtitleの投稿一覧へ戻る", :back %>
-    </div>
-  </div>
-
+<title>Pitchsound コメント</title>
+<div class="row">
+    <%= link_to "投稿一覧へ戻る", :back %>
+</div>
 <div class="comments-title">
-
   <p class="username">Title：<%= @upload_file.title %></p>
   <audio controls src= <%= @upload_file.file %>>
   </audio>
-  </div>
-  <HR color="#191970">
-
+</div>
 <div class="comments-content clearfix">
-
   <p class="comments">コメント</p>
-    <HR color="#191970">
-
-<ul class="list-comments clearfix">
-   <% @comments.reverse_order.each do |comment| %>
-                <li style="border-bottom: dotted 1px">
-
-<!--                     <h3 class="text-xsmall text-overflow" title="<%= comment.nickname %>"> -->
-  <div>ニックネーム</div>
-                      <span><i class="text-xxsmall" title=""></i></span><%= comment.nickname %>
-                    </h3>
-                    <p class="text-small">評価
-                      <span class="rating-star"><i class="star-actived rate-<%= comment.rate %>0"></i></span>
-                    </p>
-                    <p>コメント：
-                      <%= comment.comments %>
-                    </p>
-                </li>
-                <% end %>
-<!--     <li>  <a href="#"><p class="username">Username</p></a><a href="#">コメント１</a></li>
-    <li>  <a href="#"><p class="username">Username</p></a><a href="#">コメント２</a></li>
-    <li>  <a href="#"><p class="username">Username</p></a><a href="#">コメント３</a></li>
-    <li>  <a href="#"><p class="username">Username</p></a><a href="#">コメント４</a></li>
-    <li>  <a href="#"><p class="username">Username</p></a><a href="#">コメント５</a></li> -->
-</ul>
-  </div>
-
-
-
+  <HR color="#191970">
+  <ul class="list-comments">
+    <% @comments.reverse_order.each do |comment| %>
+    <li class="commentlist" style="border-bottom: dotted 1px">
+      <h2>ニックネーム：
+      <span><i class="text-xxsmall" title=""></i></span><%= comment.nickname %>
+      </h2>
+      <h2>評価
+        <span class="rating-star"><i class="star-actived rate-<%= comment.rate %>0"></i></span>
+      </h2>
+      <h2>コメント：</h2>
+      <p>
+        <%= comment.comments %>
+      </p>
+    </li>
+    <% end %>
+  </ul>
+</div>
 <footer>
-
-     <div class="tab_contents clearfix">
-            <div class="tab1-1" name="tab1">
-             <%= link_to 'Search', "/music", method: :get , class: "tabmenu"%>
-           </div>
-            <div class="tab2-1" name="tab2">
-            <% if user_signed_in? %>
-              <%= link_to 'Mypage', user_path(current_user), method: :get , class: "tabmenu"%>
-            <% else %>
-            <%= link_to 'Login', "/users/sign_in", method: :get , class: "tabmenu"%>
-          <% end %>
-
-            </div>
+  <div class="tab_contents clearfix">
+    <div class="tab1-1" name="tab1">
+     <%= link_to 'Search', "/music", method: :get , class: "tabmenu"%>
     </div>
-
+    <div class="tab2-1" name="tab2">
+      <% if user_signed_in? %>
+        <%= link_to 'Mypage', user_path(current_user), method: :get , class: "tabmenu"%>
+      <% else %>
+        <%= link_to 'Login', "/users/sign_in", method: :get , class: "tabmenu"%>
+      <% end %>
+    </div>
+  </div>
 </footer>
-
-
-
-
-  </body>
-
-
+</body>
 </html>
 
 <footer>
 <div class="uploadcontents">
 <% @comment = Comment.new %>
-    <h3>
-      コメントする
-    </h3>
-    <%= form_for @comment, url: music_uploader_comments_path, method: :post do |f| %>
-      <%= f.hidden_field :uploader_id, :value => @upload_file.id %>
-      <%= f.label :nickname, "ニックネーム" %>
-      <%= f.text_field :nickname %>
-      <%= f.label :評価, style: { 'margin-right' => 8 } %>
-            <%= f.number_field :rate, placeholder: '評価', value: 1, max: 10, min: 1, html: { class: "search__query", style: 'text-align: right;' } %>
+  <h2 class="whitefont">
+    コメントする
 
-      <%= f.label :comments, "コメント" %>
-      <%= f.text_field :comments %>
-      <%= f.submit "Upload" %>
-
-    <% end %>
-
-  </footer>
+  <%= form_for @comment, url: music_uploader_comments_path, method: :post do |f| %>
+    <%= f.hidden_field :uploader_id, :value => @upload_file.id %>
+    <%= f.text_field :nickname, :class => "nicknamefield", placeholder: 'ニックネーム' %>
+    <br>
+    <%= f.label :評価 %>
+    <%= f.number_field :rate, placeholder: '評価', value: 1, max: 10, min: 1, :class =>"ratefield" %>
+    <br>
+    <%= f.text_field :comments, :class => "commentsfield", placeholder: 'コメントを入力' %><br>
+    <%= f.submit "Upload", :class => "uploadbutton" %>
+    </h2>
+<% end %>
+</div>
+</footer>

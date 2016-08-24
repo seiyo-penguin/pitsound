@@ -1,31 +1,23 @@
+<h3 class="newfont">
+      Congratulations!<br>You are the first to upload this song!<br>
 
-
-
-
-
-    <h3>
-      Congratulations! You are the first to upload this song!
-      アレンジのオリジナル曲を登録してください。
-    </h3>
-
-
+</h3>
+<h3 class="newfont2">
   <form id="search" onsubmit="return false;">
     <input type="text" class="textbox" value=<%= @songtitle%> id="q" size="40" name="songtitle">
-    <button type="submit" value="この曲の動画を検索" class="btn"><span></span></button>
+    <button type="submit" value="この曲の動画を検索" class="btn"><span>検索</span></button>
   </form>
-
-
-    <%= form_for @music, :url => {:action => 'create'} do |f| %>
-      <%= f.label :songtitle, "曲名"%>
-      <!-- <input type="text" class="textbox" value=<%= @songtitle%> id="q" size="40" name="songtitle"> -->
-      <%= f.hidden_field :songtitle, value: @songtitle %><br>
-      <%= f.label :uid, "以下の動画から選ぶまたはYoutubeの埋め込みコードを貼り付ける" %>
-      <%= f.text_field :uid %>
-      <%= f.submit "この曲のアレンジを投稿する" %>
-      <div class="insert_youtube">
-      </div>
-
+<%= form_for @music, :url => {:action => 'create'} do |f| %>
+  <%= f.hidden_field :songtitle, value: @songtitle %>
+  <%= f.label :uid, "以下の検索結果から選択" %>
+  <%= f.text_field :uid, :class => "urlfield", :placeholder => "またはYoutubeの動画IDをここに貼り付ける" %><br><br>
+  <%= f.submit "この曲のアレンジを投稿する", :class => "registervideo" %>
+<ul class="list-videos">
+  <div class="insert_youtube">
+  </div>
+</ul>
 <% end %>
+</h3>
 
 
 <footer>

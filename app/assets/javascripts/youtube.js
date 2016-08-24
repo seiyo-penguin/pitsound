@@ -18,7 +18,7 @@ $(function() {
         $('#list').empty();
             for (var i = 0; i < rs.items.length; i++) {
             id = rs.items[i].id.videoId;
-            var youtube = "<iframe width=\"853\" height=\"480\" src=\"https:\/\/www.youtube.com\/embed\/" + id + " \"allowfullscreen><\/iframe>" + "<div><input type='checkbox' name='music[uid]' value=" + id+  " <\/div>";
+            var youtube = "<iframe width=\"853\" height=\"480\" src=\"https:\/\/www.youtube.com\/embed\/" + id + " \"allowfullscreen><\/iframe>" + "<div><input type='checkbox' name='music[uid]' class='checkbox' value=" + id+  " <\/div>";
             console.log("該当URL")
             console.log(youtube)
 

@@ -1,88 +1,48 @@
 
 <title>Pitchsound マイページ</title>
-<h2 class="mypage">My Page</h2>
 
 <body>
-  <% if user_signed_in? %>
-    <div class="entry_button" style="right: 30%">
-      <%= link_to 'Sign Out', "/users/sign_out", method: :delete %>
-    </div>
-  <% end %>
 
-  <div class="sawadatthi">
+
     <div class="userprofile">
       <div class="user">
-        <h2><%=  current_user.username %> <span>さんのマイページ</span></h2></div>
-      <div class="picture"><%= image_tag  current_user.avatar, :width => "100%", :height => "750px" %></div>
+      <p class="username"><%= current_user.username %><span>さんのマイページ</span></p></div>
+      <div class="picture"><%= image_tag  current_user.avatar, :width => "500px", :height => "500px" %></div>
     </div>
+
+  <div class="userupload">
+        <h2><%=  current_user.username %> <span>さんのアレンジ一覧</span></h2>
   </div>
 
+
+<div class="blank">
   <ul class="mypage-list">
-
-
-
-
-
-
-
+  <div class="list-music">
   <% @upload_file.each do |upload_file| %>
     <ul class="list-menu">
       <div class="right-content">
         <li>
-          <a href="#">
-            <p class="username">曲名:<%= upload_file.songtitle %></p>
-          </a><br>
-          <a href="#">Title:
+            <p class="username"><%= upload_file.songtitle %>のアレンジ
+          <br>
             <%= upload_file.title %>
+            </p>
             <%= link_to 'コメント一覧', music_uploader_comments_path(upload_file.music_id, upload_file.id), method: :get , class: "upload-yours clearfix", id: "post_a"%>
-          </a>
           <ul>
             <audio controls src= <%= upload_file.file %>>
             </audio>
           </ul>
     <% if user_signed_in? && current_user.id == upload_file.user_id %>
-      <%= link_to '編集', edit_music_uploader_path(upload_file.music_id,upload_file.id), method: :get %>
-    <%= link_to '削除', music_uploader_path(upload_file.music_id,upload_file.id), method: :delete %>
+      <h1><%= link_to '編集', edit_music_uploader_path(upload_file.music_id,upload_file.id), method: :get %>
+      <%= link_to '削除', music_uploader_path(upload_file.music_id,upload_file.id), method: :delete %></h1>
     <% end %>
         </li>
       </div>
     </ul>
   <% end %>
-
-
-<!--
-      <div class="left-content">
-      <li>Title  <a href="#" class="edit">編集</a>  <a href="#" class="delete">削除</a><br><a href="#">ハナミズキピアノで弾いてみた</a></li>
-      </div>
-
-  <div class="right-content">
-  <li><input type="image" src= "playbutton.png" alt="" class="relative button"/></li>
   </div>
-
-
-<div class="left-content">
-    <li>Title  <a href="#" class="edit">編集</a>  <a href="#" class="delete">削除</a><br><a href="#">ハナミズキピアノで弾いてみた</a></li>
-  </div>
-
-  <div class="right-content">
-  <li><input type="image" src= "playbutton.png" alt="" class="relative button"/></li>
-  </div>
-
-  <div class="left-content">
-    <li>Title  <a href="#" class="edit">編集</a>  <a href="#" class="delete">削除</a><br><a href="#">ハナミズキピアノで弾いてみた</a></li>
-  </div>
-
-  <div class="right-content">
-  <li><input type="image" src= "playbutton.png" alt="" class="relative button"/></li>
-  </div>
-
- -->
-<!-- </ul> -->
-  <!-- </div> -->
+  </ul>
+</div>
   <footer>
-
-
-
     <div class="tab_contents clearfix">
             <div class="tab1-2" name="tab1">            <%= link_to 'Search', "/music", method: :get , class: "tabmenu"%>
             </div>
@@ -97,14 +57,9 @@
               <!-- <%= link_to 'ログアウト', "/users/sign_out", method: :delete , class: "tabmenu"%> -->
             </div>
     </div>
-
 </footer>
 
-
-
-
-
-  </body>
+</body>
 
 
 </html>

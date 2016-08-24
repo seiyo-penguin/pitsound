@@ -1,21 +1,15 @@
-  <% if user_signed_in? %>
-                <div class="entry_button" style="right: 30%">
-                  <%= link_to 'Sign Out', "/users/sign_out", method: :delete %>
-                </div>
+<% if user_signed_in? %>
+  <div class="entry_button" style="right: 30%">
+    <%= link_to 'Sign Out', "/users/sign_out", method: :delete %>
+  </div>
 
-              <% end %>
-  <div>
+<% end %>
 <form method="get" action="#" id="search">
-
   <form id="search" onsubmit="return false;">
     <input type="text" class="textbox" placeholder="曲名で検索" id="q" size="40">
     <button type="submit" value="検索" class="btn"><span aria-hidden="true"></span></button>
-    </form>
-
-
+  </form>
 </form>
-  </div>
-
 <ul id="list"></ul>
  <div id="search">
 

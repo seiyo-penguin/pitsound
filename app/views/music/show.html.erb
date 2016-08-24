@@ -1,66 +1,51 @@
-
-
-  <div>曲名：<%= @music.songtitle %></div>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @music.uid %>" frameborder="0" allowfullscreen></iframe>
-
-
-
-
-
-
-<% @upload_file.reverse_order.each do |upload_file| %>
-
 <ul class="list-menu">
-
-
+  <div class="right-content">
+    <ul>
+      <div class="videoresult"><br>
+        <p class="titlesearch">曲名：<%= @music.songtitle %></p>
+        <iframe width="534" height="300" src="https://www.youtube.com/embed/<%= @music.uid %>" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </ul>
   </div>
+</ul>
+<ul class="list-comments">
+<% @upload_file.reverse_order.each do |upload_file| %>
+  <ul class="list-menu">
   <div class="right-content">
     <li>
-    <p class="username">Userid:<%= upload_file.user_id %></p>
-    <a href="#">Title:
-      <%= upload_file.title %></a><br>
-    <a href="#">
+    <p class="username">userid:<%= upload_file.user_id %><br>
+Title:
+      <%= upload_file.title %><br>
     <%= link_to 'コメント一覧', music_uploader_comments_path(@music, upload_file.id), method: :get , class: "upload-yours clearfix", id: "post_a"%>
-    </a>
-
+  </p>
     <ul>
-    <audio controls src= <%= upload_file.file %>>
-    </audio>
-
+      <audio controls src= <%= upload_file.file %>>
+      </audio>
     </ul>
-
     </li>
-
-
-
   </div>
+  </ul>
 <% end %>
+</ul>
 
 <footer>
-<div class="uploadcontents">
+<div class="uploadcontents2">
 <% @upload = UploadFile.new %>
-    <h3>
+  <h3 class="uploadfont">
       投稿する
-    </h3>
     <%= form_for @upload, url: uploader_upload_path do |f| %>
       <%= f.hidden_field :songtitle, :value => @music.songtitle %>
       <%= f.hidden_field :music_id, :value => @music.id %>
       <%= f.hidden_field :user_id, :value => current_user.id %>
-      <%= f.label :title, "title" %>
-      <%= f.text_field :title %>
-
-      <%= f.label :file %>
-      <%= f.file_field :file %>
-      <%= f.submit "Upload" %>
-
+      <%= f.text_field :title, placeholder: 'タイトル', :class => "titlefield" %><br>
+      <%= f.file_field :file, :class => "filefield" %><br>
+      <%= f.submit "Upload", :class => "uploadbutton" %>
     <% end %>
-
-  </footer>
+  </h3>
+</footer>
 
 
   <footer>
-
      <div class="tab_contents clearfix">
             <div class="tab1-1" name="tab1">
              <%= link_to 'Search', "/music", method: :get , class: "tabmenu"%>

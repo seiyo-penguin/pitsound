@@ -14,11 +14,11 @@
     <header>
        <div class="heading clearfix">
         <h1><%= link_to 'Pitchsound', "/", method: :get , class: "title" %></h1>
-          <% if user_signed_in? %>
-                <div class="entry_button">
-                  <%= link_to 'Sign Out', "/users/sign_out", method: :delete %>
-                </div>
-              <% end %>
+        <% if user_signed_in? %>
+          <div class="entry_button" style="right: 50%">
+            <%= link_to 'Sign Out', "/users/sign_out", method: :delete %>
+          </div>
+        <% end %>
 
 
       </div>
